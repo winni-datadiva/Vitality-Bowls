@@ -1,11 +1,12 @@
-# Vitality Bowls — AI Growth Engine
+# **Vitality Bowls — AI Growth Engine**
 ### TKH AI for Impact: Small Business Challenge · Group 2
 
 ---
 
 ## Background
 
-Vitality Bowls Stamford is a first-year franchise. As such, they have a limited marketing budget, limited control regarding digital assets, and franchise brand standards that they must follow. Previously they relied on a third-party agency to manage their digital advertising (i.e. Google, social media) that provided neglible return on investment and no marked differentiation to store reenue.
+Vitality Bowls Stamford is a first-year franchise. As such, they have a limited marketing budget, limited control regarding digital assets, and franchise brand standards that they must follow. Previously they relied on a third-party agency to manage their digital advertising (i.e. Google, social media) that provided neglible return on investment and no marked differentiation to store revenue. In the Stamford, CT area there’s a growing number of healthy fast-casual dining options. Vitality Bowls Stamford has an opportunity grow its market share.
+
 
 ---
 
@@ -77,9 +78,19 @@ From there, work through the tabs in order. Each one has one job and does it cle
 
 ---
 
+## Built With
+
+Claude  
+GitHub  
+Google  
+Linktree  
+Market Research  
+VS Code  
+
+
 ## Built By
 
 Group 2 — Aminatu, Deborah, Dre, Nick, Noah, Winni
 
-TKH Data Science Technology Fellowship at Synchrony Skills Academy
+TKH Data Science Technology Fellowship at Synchrony Skills Academy  
 AI for Impact: Small Business Challenge · May 2026
