@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vitality Bowls Stamford — AI Growth Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#FBFBFA;
+  --surface:#FFFFFF;
+  --surface-2:#F7F6F3;
+  --ink:#111111;
+  --ink-2:#2F3437;
+  --ink-3:#787774;
+  --ink-4:#B5B3AD;
+  --border:#EAEAEA;
+  --border-soft:rgba(17,17,17,.06);
+  --pr-bg:#FDEBEC; --pr-fg:#9F2F2D;
+  --pb-bg:#E1F3FE; --pb-fg:#1F6C9F;
+  --pg-bg:#EDF3EC; --pg-fg:#346538;
+  --py-bg:#FBF3DB; --py-fg:#956400;
+  --pp-bg:#F2EAF8; --pp-fg:#5B3382;
+  --po-bg:#FBEFE2; --po-fg:#8A4A0F;
+  --pk-bg:#FCEAF1; --pk-fg:#9A2C5A;
+  --pt-bg:#E4F1F2; --pt-fg:#2C6B6F;
+  --font-sans:'Geist','Switzer','Helvetica Neue',system-ui,-apple-system,sans-serif;
+  --font-serif:'Newsreader','Lyon Text','Instrument Serif',Georgia,serif;
+  --font-mono:'JetBrains Mono','Geist Mono','SF Mono',ui-monospace,monospace;
+  --radius:12px;
+  --radius-sm:8px;
+  --radius-btn:6px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--bg);}
+body{
+  font-family:var(--font-sans);
+  color:var(--ink-2);
+  font-size:14px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:rgba(17,17,17,.08);border-radius:3px;}
+
+.icon{width:14px;height:14px;flex-shrink:0;display:inline-block;vertical-align:-2px;}
+.icon-sm{width:12px;height:12px;}
+.icon-md{width:16px;height:16px;}
+
+/* FAUX-OS WINDOW CHROME */
+.os-window{background:var(--bg);min-height:100vh;}
+.os-bar{
+  border-bottom:1px solid var(--border);
+  height:36px;display:flex;align-items:center;
+  padding:0 18px;gap:14px;
+  position:sticky;top:0;z-index:90;
+  backdrop-filter:saturate(180%) blur(8px);
+  background:rgba(255,255,255,.86);
+}
+.os-dots{display:flex;gap:6px;}
+.os-dot{width:11px;height:11px;border-radius:50%;background:#E2E0DC;}
+.os-path{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.02em;
+}
+.os-path .sep{color:var(--ink-4);margin:0 6px;}
+.os-meta{
+  margin-left:auto;display:flex;align-items:center;gap:18px;
+  font-family:var(--font-mono);font-size:10px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.os-meta > div{display:flex;align-items:center;gap:6px;}
+.os-status::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--pg-fg);margin-right:6px;}
+
+/* EDITORIAL HEADER */
+.head{
+  padding:64px 56px 40px;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.head::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 88% 12%, rgba(180,140,90,.045), transparent 55%);
+  pointer-events:none;
+}
+.head-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink-3);margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.head-title{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:54px;line-height:1.05;letter-spacing:-.028em;
+  color:var(--ink);max-width:760px;margin-bottom:18px;
+}
+.head-title em{font-style:italic;color:var(--ink-2);}
+.head-sub{
+  font-size:15px;color:var(--ink-3);
+  max-width:580px;line-height:1.65;
+}
+.head-meta{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  margin-top:36px;padding-top:24px;
+  border-top:1px solid var(--border);
+}
+.head-meta > div{
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em;
+}
+.head-meta b{
+  display:block;margin-top:6px;
+  font-family:var(--font-serif);font-weight:400;
+  font-size:18px;color:var(--ink);
+  text-transform:none;letter-spacing:-.01em;
+}
+
+/* TABS */
+.nav{
+  border-bottom:1px solid var(--border);
+  padding:0 56px;display:flex;gap:2px;overflow-x:auto;
+  position:sticky;top:36px;z-index:80;
+  background:rgba(251,251,250,.92);
+  backdrop-filter:saturate(180%) blur(8px);
+}
+.tab{
+  background:none;border:none;
+  font-family:var(--font-sans);font-size:13px;font-weight:500;
+  color:var(--ink-3);padding:18px 4px 16px;margin-right:32px;
+  cursor:pointer;border-bottom:1.5px solid transparent;
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+  display:flex;align-items:baseline;gap:9px;white-space:nowrap;
+}
+.tab:hover{color:var(--ink);}
+.tab.active{color:var(--ink);border-bottom-color:var(--ink);}
+.tab .num{font-family:var(--font-mono);font-size:10px;color:var(--ink-4);font-weight:400;}
+.tab.active .num{color:var(--ink-2);}
+
+/* LAYOUT */
+.layout{
+  display:grid;grid-template-columns:300px 1fr;gap:0;
+  min-height:calc(100vh - 36px);
+}
+.sidebar{
+  border-right:1px solid var(--border);
+  padding:48px 32px;
+  display:flex;flex-direction:column;gap:44px;
+  position:sticky;top:120px;align-self:start;
+  height:calc(100vh - 120px);overflow-y:auto;
+}
+.main{padding:48px 56px 120px;max-width:1120px;}
+
+/* SIDEBAR */
+.sb-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.18em;
+  color:var(--ink-3);margin-bottom:16px;
+}
+.sb-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--border-soft);
+  font-size:13px;
+}
+.sb-row:last-child{border-bottom:none;}
+.sb-row .k{color:var(--ink-3);}
+.sb-row .v{font-family:var(--font-mono);color:var(--ink);font-weight:500;font-size:12.5px;}
+.sb-row .v.warn{color:var(--po-fg);}
+.sb-queue-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:10px 0;font-size:12.5px;color:var(--ink-2);
+  border-bottom:1px solid var(--border-soft);
+}
+.sb-queue-item:last-child{border-bottom:none;}
+.sb-queue-item .num{
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--ink-4);min-width:20px;letter-spacing:.04em;
+}
+.sb-quote{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:16px;line-height:1.55;color:var(--ink-2);
+  border-left:2px solid var(--ink);padding:4px 0 4px 16px;
+  letter-spacing:-.01em;
+}
+.sb-quote-attr{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-top:12px;
+}
+
+/* SECTIONS */
+.section{display:none;}
+.section.visible{display:block;}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;margin-bottom:36px;padding-bottom:28px;
+  border-bottom:1px solid var(--border);
+}
+.sec-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink-3);margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:40px;line-height:1.05;letter-spacing:-.028em;
+  color:var(--ink);max-width:640px;margin-bottom:12px;
+}
+.sec-title em{font-style:italic;}
+.sec-sub{font-size:13.5px;color:var(--ink-3);max-width:580px;line-height:1.65;}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 14px;border-radius:var(--radius-btn);
+  font-family:var(--font-sans);font-size:12px;font-weight:500;
+  cursor:pointer;border:1px solid transparent;
+  transition:all .15s var(--ease);white-space:nowrap;
+}
+.btn:active{transform:scale(.98);}
+.btn-primary{background:var(--ink);color:var(--surface);}
+.btn-primary:hover{background:#2A2A2A;}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border);}
+.btn-ghost:hover{border-color:var(--ink-3);}
+.btn-mute{background:var(--surface-2);color:var(--ink-2);border-color:var(--border);}
+.btn-mute:hover{background:#EFEDE8;}
+.btn-link{background:transparent;color:var(--ink-3);padding:6px 4px;}
+.btn-link:hover{color:var(--ink);}
+.btn-sm{padding:6px 11px;font-size:11px;}
+.btn-xs{padding:4px 9px;font-size:10px;}
+
+/* TAGS — pill ok per spec for tags */
+.tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.09em;
+  padding:3px 9px;border-radius:9999px;
+  background:var(--surface-2);color:var(--ink-2);
+  white-space:nowrap;
+}
+.tag-r{background:var(--pr-bg);color:var(--pr-fg);}
+.tag-b{background:var(--pb-bg);color:var(--pb-fg);}
+.tag-g{background:var(--pg-bg);color:var(--pg-fg);}
+.tag-y{background:var(--py-bg);color:var(--py-fg);}
+.tag-p{background:var(--pp-bg);color:var(--pp-fg);}
+.tag-o{background:var(--po-bg);color:var(--po-fg);}
+.tag-pk{background:var(--pk-bg);color:var(--pk-fg);}
+.tag-t{background:var(--pt-bg);color:var(--pt-fg);}
+
+/* BENTO STAT GRID */
+.stat-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);
+  margin-bottom:36px;overflow:hidden;
+}
+.stat{background:var(--surface);padding:28px;}
+.stat-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.16em;
+  color:var(--ink-3);margin-bottom:16px;
+}
+.stat-val{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:48px;line-height:1;letter-spacing:-.028em;
+  color:var(--ink);
+}
+.stat-val .pre{font-size:24px;color:var(--ink-3);margin-right:2px;letter-spacing:0;}
+.stat-delta{
+  font-family:var(--font-mono);font-size:11px;
+  color:var(--ink-3);margin-top:12px;letter-spacing:.02em;
+}
+.stat-delta.pos{color:var(--pg-fg);}
+.stat-delta.warn{color:var(--po-fg);}
+
+/* CALLOUT */
+.callout{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-left:2px solid var(--ink);border-radius:var(--radius-sm);
+  padding:16px 20px;font-size:13px;color:var(--ink-2);
+  line-height:1.65;margin-bottom:28px;
+}
+.callout strong{font-weight:600;color:var(--ink);}
+.callout-warn{border-left-color:var(--po-fg);}
+.callout-warn strong{color:var(--po-fg);}
+
+/* TABLE */
+.table-wrap{
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;background:var(--surface);
+}
+.tbl{width:100%;border-collapse:collapse;}
+.tbl th{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;font-weight:500;
+  color:var(--ink-3);text-align:left;
+  padding:14px 22px;border-bottom:1px solid var(--border);
+  background:var(--bg);
+}
+.tbl td{
+  padding:18px 22px;border-bottom:1px solid var(--border);
+  font-size:13px;vertical-align:middle;
+}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tbody tr{cursor:pointer;transition:background .15s var(--ease);}
+.tbl tbody tr:hover{background:var(--bg);}
+.av{
+  width:34px;height:34px;border-radius:8px;
+  background:var(--surface-2);border:1px solid var(--border);
+  color:var(--ink-2);font-family:var(--font-mono);
+  font-size:11px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.cell-name{display:flex;align-items:center;gap:14px;}
+.cell-name b{display:block;color:var(--ink);font-weight:500;font-size:13.5px;letter-spacing:-.005em;}
+.cell-name span{color:var(--ink-3);font-size:11px;font-family:var(--font-mono);letter-spacing:.02em;}
+.cell-mono{font-family:var(--font-mono);color:var(--ink-2);font-size:12px;letter-spacing:.02em;}
+.cell-num{font-family:var(--font-serif);font-size:20px;color:var(--ink);font-weight:400;letter-spacing:-.022em;}
+
+/* CHANNEL */
+.chan{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-3);
+}
+.chan svg{color:var(--ink-2);}
+
+/* DRAFT PANEL */
+.panel{
+  margin-top:32px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;
+}
+.panel-head{
+  padding:18px 26px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:14px;background:var(--bg);
+}
+.panel-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.18em;color:var(--ink);
+}
+.panel-body{padding:32px 36px;}
+.panel-meta{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-3);
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:11px 14px;
+  margin-bottom:18px;letter-spacing:.02em;
+}
+.panel-subj{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:11px 14px;
+  font-size:12.5px;color:var(--ink-2);margin-bottom:16px;
+}
+.panel-subj b{
+  font-weight:500;color:var(--ink);font-family:var(--font-mono);
+  font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;
+  margin-right:10px;
+}
+.panel-draft{
+  font-family:var(--font-serif);font-size:17px;
+  line-height:1.7;color:var(--ink-2);white-space:pre-line;
+  border-left:2px solid var(--border);padding:8px 0 8px 28px;
+  max-width:62ch;letter-spacing:-.005em;
+}
+.panel-actions{
+  display:flex;gap:8px;margin-top:28px;padding-top:22px;
+  border-top:1px solid var(--border);align-items:center;flex-wrap:wrap;
+}
+.panel-note{
+  font-family:var(--font-mono);font-size:10px;color:var(--ink-4);
+  text-transform:uppercase;letter-spacing:.12em;margin-left:auto;
+}
+
+/* SEQUENCE */
+.seq{margin-top:28px;}
+.seq-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.18em;
+  color:var(--ink-3);margin-bottom:16px;
+}
+.seq-row{display:flex;align-items:flex-start;gap:0;}
+.seq-step{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;}
+.seq-step:not(:last-child)::after{
+  content:"";position:absolute;top:11px;left:50%;
+  width:100%;height:1px;background:var(--border);z-index:0;
+}
+.seq-step.done::after{background:var(--ink);}
+.seq-dot{
+  width:22px;height:22px;border-radius:50%;
+  border:1px solid var(--border);background:var(--surface);
+  font-family:var(--font-mono);font-size:10px;color:var(--ink-3);
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;position:relative;
+}
+.seq-step.done .seq-dot{background:var(--ink);border-color:var(--ink);color:var(--surface);}
+.seq-step.active .seq-dot{background:var(--surface);border-color:var(--ink);color:var(--ink);font-weight:600;}
+.seq-step.active .seq-dot::after{
+  content:"";position:absolute;inset:-4px;
+  border:1px solid var(--ink);border-radius:50%;
+  animation:pulseRing 1.8s var(--ease) infinite;
+}
+@keyframes pulseRing{0%{opacity:.55;transform:scale(1);}100%{opacity:0;transform:scale(1.45);}}
+.seq-txt{
+  font-family:var(--font-mono);font-size:9.5px;color:var(--ink-3);
+  margin-top:10px;text-transform:uppercase;letter-spacing:.1em;
+  text-align:center;line-height:1.4;
+}
+.seq-step.done .seq-txt{color:var(--ink-2);}
+.seq-step.active .seq-txt{color:var(--ink);}
+
+/* FILTERS */
+.filters{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+.filt{
+  padding:7px 14px;border-radius:9999px;
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--ink-3);font-family:var(--font-sans);
+  font-size:11px;font-weight:500;
+  cursor:pointer;transition:all .15s var(--ease);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.filt:hover{color:var(--ink);}
+.filt.active{background:var(--ink);color:var(--surface);border-color:var(--ink);}
+
+.chfilters{display:flex;gap:6px;margin-bottom:28px;flex-wrap:wrap;}
+.chf{
+  padding:5px 11px;border-radius:9999px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--ink-3);font-family:var(--font-mono);
+  font-size:10px;text-transform:uppercase;letter-spacing:.1em;
+  cursor:pointer;transition:all .15s var(--ease);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.chf:hover{color:var(--ink);}
+.chf.active{border-color:var(--ink);color:var(--ink);}
+
+/* OUTREACH CARD */
+.oc{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px 26px;margin-bottom:10px;
+  transition:border-color .2s var(--ease);
+}
+.oc:hover{border-color:#D6D4CF;}
+.oc.pending{border-left:2px solid var(--ink);}
+.oc-row{display:flex;align-items:flex-start;gap:16px;}
+.oc-num{
+  font-family:var(--font-mono);font-size:11px;
+  color:var(--ink-4);margin-top:2px;min-width:22px;letter-spacing:.04em;
+}
+.oc-body{flex:1;}
+.oc-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+.oc-name{font-size:14.5px;color:var(--ink);font-weight:500;letter-spacing:-.005em;}
+.oc-contact{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);margin-bottom:12px;letter-spacing:.02em;}
+.oc-why{
+  font-size:12.5px;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:9px 13px;
+  margin-bottom:12px;line-height:1.55;
+}
+.oc-why .lbl{
+  font-family:var(--font-mono);font-size:9px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-right:8px;
+}
+.oc-prev{
+  font-family:var(--font-serif);font-size:14px;font-style:italic;
+  color:var(--ink-3);line-height:1.65;
+  border-left:2px solid var(--border);padding:4px 0 4px 16px;
+  margin-bottom:16px;letter-spacing:-.005em;
+}
+.oc-acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+/* PROSPECT BENTO */
+.prospect-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.pc-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:28px;
+  transition:border-color .2s var(--ease);
+}
+.pc-card:hover{border-color:#D6D4CF;}
+.pc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:14px;}
+.pc-name{font-size:16px;color:var(--ink);font-weight:500;letter-spacing:-.012em;line-height:1.25;}
+.pc-type{
+  font-family:var(--font-mono);font-size:10px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.1em;margin-top:6px;
+}
+.pc-score{
+  font-family:var(--font-serif);font-size:42px;line-height:1;
+  letter-spacing:-.028em;color:var(--ink);font-weight:400;
+}
+.pc-score-l{
+  font-family:var(--font-mono);font-size:9px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);text-align:right;margin-top:6px;
+}
+.score-bar{height:2px;background:var(--border);border-radius:1px;margin:0 0 18px;overflow:hidden;}
+.score-fill{height:100%;background:var(--ink);border-radius:1px;}
+.pc-why{font-size:13px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;max-width:42ch;}
+.pc-channels{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.pc-channels .chip{
+  display:inline-flex;align-items:center;gap:5px;
+  border:1px solid var(--border);border-radius:4px;padding:4px 9px;
+  font-family:var(--font-mono);font-size:10px;color:var(--ink-2);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.pc-val{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink);
+  margin-bottom:20px;letter-spacing:.02em;
+  padding-top:14px;border-top:1px solid var(--border);
+}
+.pc-val .lbl{
+  color:var(--ink-3);text-transform:uppercase;font-size:9px;
+  letter-spacing:.14em;display:block;margin-bottom:5px;
+}
+.pc-acts{display:flex;gap:8px;}
+
+/* AD & CONTENT STUDIO */
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.studio-col h3{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:24px;letter-spacing:-.022em;color:var(--ink);
+  margin-bottom:8px;
+}
+.studio-col .col-sub{
+  font-size:13px;color:var(--ink-3);margin-bottom:24px;line-height:1.6;
+}
+
+/* POST CARD */
+.post-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-bottom:14px;
+  transition:border-color .2s var(--ease);
+}
+.post-card:hover{border-color:#D6D4CF;}
+.post-visual{
+  padding:40px 30px;border-bottom:1px solid var(--border);
+  position:relative;
+}
+.post-visual.bg-g{background:var(--pg-bg);}
+.post-visual.bg-b{background:var(--pb-bg);}
+.post-visual.bg-p{background:var(--pp-bg);}
+.post-visual::before{
+  content:"";position:absolute;top:18px;right:18px;
+  width:26px;height:26px;border:1px solid rgba(17,17,17,.12);
+  border-radius:50%;background:rgba(255,255,255,.5);
+}
+.post-eyebrow{
+  font-family:var(--font-mono);font-size:9.5px;
+  text-transform:uppercase;letter-spacing:.16em;
+  color:var(--ink-3);margin-bottom:14px;
+}
+.post-headline{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:26px;line-height:1.15;letter-spacing:-.024em;
+  color:var(--ink);max-width:320px;
+}
+.post-body{padding:24px 26px;}
+.post-segment{margin-bottom:14px;}
+.post-caption{
+  font-family:var(--font-serif);font-size:14.5px;
+  line-height:1.7;color:var(--ink-2);
+  margin-bottom:14px;white-space:pre-line;
+  letter-spacing:-.005em;
+}
+.post-hashtags{
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--ink-3);margin-bottom:18px;line-height:1.7;
+  letter-spacing:.02em;word-break:break-word;
+}
+.post-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.boost{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--po-fg);background:var(--po-bg);
+  padding:5px 10px;border-radius:4px;
+}
+
+/* AD CARD */
+.ad-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:26px;margin-bottom:14px;
+  transition:border-color .2s var(--ease);
+}
+.ad-card:hover{border-color:#D6D4CF;}
+.ad-plat{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-bottom:16px;
+}
+.ad-headline{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:22px;line-height:1.2;letter-spacing:-.022em;
+  color:var(--ink);margin-bottom:10px;
+}
+.ad-copy{font-size:13.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;max-width:48ch;}
+.ad-aud{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:9px 13px;
+  margin-bottom:10px;letter-spacing:.02em;line-height:1.6;
+}
+.ad-aud .lbl{
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-4);font-size:9px;display:block;margin-bottom:4px;
+}
+.ad-why{
+  font-size:12.5px;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--border);
+  border-left:2px solid var(--ink);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:11px 14px;margin-bottom:14px;line-height:1.6;
+}
+.ad-budget{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:16px 20px;margin-bottom:18px;
+}
+.ad-budget .lbl{
+  font-family:var(--font-mono);font-size:9px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-bottom:6px;
+}
+.ad-budget .est{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);letter-spacing:.02em;}
+.ad-budget .val{
+  font-family:var(--font-serif);font-size:36px;line-height:1;
+  letter-spacing:-.028em;color:var(--ink);font-weight:400;
+}
+
+/* SLIDER */
+.slider-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:26px;margin-bottom:18px;
+}
+.slider-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;}
+.slider-lbl{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);
+}
+.slider-val{
+  font-family:var(--font-serif);font-size:40px;line-height:1;
+  letter-spacing:-.028em;color:var(--ink);font-weight:400;
+}
+input[type=range]{
+  width:100%;appearance:none;-webkit-appearance:none;
+  height:2px;background:var(--border);border-radius:1px;
+  margin:14px 0 16px;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--ink);cursor:pointer;
+  border:3px solid var(--surface);
+  box-shadow:0 0 0 1px var(--ink);
+}
+input[type=range]::-moz-range-thumb{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--ink);cursor:pointer;
+  border:3px solid var(--surface);
+  box-shadow:0 0 0 1px var(--ink);
+}
+.slider-est{
+  font-family:var(--font-mono);font-size:11px;
+  color:var(--ink-2);line-height:1.75;letter-spacing:.02em;
+}
+.slider-est strong{color:var(--ink);font-weight:500;}
+
+/* PHASE 2 HERO — replaces gradient with editorial */
+.p2-hero{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:64px 56px;margin-bottom:36px;
+  position:relative;overflow:hidden;
+}
+.p2-hero::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 88% 12%, rgba(180,140,90,.06), transparent 55%);
+  pointer-events:none;
+}
+.p2-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink-3);margin-bottom:18px;position:relative;
+}
+.p2-title{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:46px;line-height:1.05;letter-spacing:-.028em;
+  color:var(--ink);margin-bottom:16px;max-width:640px;position:relative;
+}
+.p2-title em{font-style:italic;}
+.p2-sub{font-size:14.5px;color:var(--ink-3);max-width:560px;line-height:1.65;position:relative;}
+
+.p2-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:36px;}
+.p2-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:32px;
+  transition:border-color .2s var(--ease);
+}
+.p2-card:hover{border-color:#D6D4CF;}
+.p2-icon{
+  width:40px;height:40px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;border:1px solid var(--border);
+}
+.p2-icon.ig-o{background:var(--po-bg);color:var(--po-fg);}
+.p2-icon.ig-g{background:var(--pg-bg);color:var(--pg-fg);}
+.p2-icon.ig-b{background:var(--pb-bg);color:var(--pb-fg);}
+.p2-icon.ig-p{background:var(--pp-bg);color:var(--pp-fg);}
+.p2-card h4{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:22px;line-height:1.2;letter-spacing:-.022em;
+  color:var(--ink);margin-bottom:8px;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+}
+.p2-card .desc{font-size:13px;color:var(--ink-3);line-height:1.65;margin-bottom:20px;max-width:42ch;}
+.p2-feats{display:flex;flex-direction:column;gap:9px;}
+.p2-feat{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:12.5px;color:var(--ink-2);line-height:1.55;
+}
+.p2-feat::before{content:"";width:6px;height:6px;background:var(--ink);margin-top:7px;flex-shrink:0;}
+.p2-card.io .p2-feat::before{background:var(--po-fg);}
+.p2-card.ig .p2-feat::before{background:var(--pg-fg);}
+.p2-card.ib .p2-feat::before{background:var(--pb-fg);}
+.p2-card.ip .p2-feat::before{background:var(--pp-fg);}
+
+.p2-tl{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:36px 40px;
+}
+.p2-tl-title{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:24px;letter-spacing:-.022em;color:var(--ink);margin-bottom:24px;
+}
+.p2-tl-row{
+  display:grid;grid-template-columns:160px 1fr;gap:28px;
+  padding:22px 0;border-bottom:1px solid var(--border);align-items:flex-start;
+}
+.p2-tl-row:last-child{border-bottom:none;}
+.p2-tl-when{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);padding-top:3px;
+}
+.p2-tl-head{font-size:14.5px;color:var(--ink);font-weight:500;margin-bottom:6px;letter-spacing:-.005em;}
+.p2-tl-desc{font-size:13px;color:var(--ink-3);line-height:1.65;max-width:62ch;}
+
+/* MODAL */
+.modal-bg{
+  display:none;position:fixed;inset:0;
+  background:rgba(17,17,17,.36);backdrop-filter:blur(6px);
+  z-index:200;align-items:center;justify-content:center;padding:24px;
+}
+.modal-bg.open{display:flex;}
+.modal{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);width:640px;max-width:100%;max-height:88vh;
+  overflow-y:auto;animation:fadeUp .35s var(--ease) both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.mh{padding:20px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.mt{font-family:var(--font-serif);font-size:20px;color:var(--ink);font-weight:400;letter-spacing:-.012em;}
+.mc{
+  background:none;border:1px solid var(--border);border-radius:var(--radius-sm);
+  width:30px;height:30px;cursor:pointer;color:var(--ink-2);
+  display:flex;align-items:center;justify-content:center;
+}
+.mc:hover{background:var(--surface-2);}
+.mb{padding:24px 28px 28px;}
+.inq-flash{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:18px 20px;margin-bottom:20px;
+}
+.if-h{
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);
+}
+.if-h::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--po-fg);animation:pulse 1.5s var(--ease) infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.if-from{font-size:11px;color:var(--ink-3);font-family:var(--font-mono);margin-bottom:8px;letter-spacing:.02em;}
+.if-msg{
+  font-family:var(--font-serif);font-size:16px;
+  line-height:1.65;color:var(--ink-2);font-style:italic;
+  letter-spacing:-.005em;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:24px;right:24px;
+  background:var(--ink);color:var(--surface);
+  padding:14px 18px;border-radius:var(--radius-sm);
+  font-size:12px;font-weight:500;font-family:var(--font-sans);
+  transform:translateY(60px);opacity:0;
+  transition:transform .35s var(--ease), opacity .35s var(--ease);
+  z-index:999;max-width:340px;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* EMPTY STATE */
+.empty{padding:64px 24px;text-align:center;color:var(--ink-3);}
+.empty-icon{
+  width:48px;height:48px;border:1px solid var(--border);border-radius:50%;
+  margin:0 auto 18px;display:flex;align-items:center;justify-content:center;color:var(--ink-2);
+}
+.empty-title{
+  font-family:var(--font-serif);font-size:22px;color:var(--ink);
+  font-weight:400;margin-bottom:8px;letter-spacing:-.014em;
+}
+.empty-sub{font-size:12.5px;color:var(--ink-3);}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease), transform .6s var(--ease);transition-delay:calc(var(--idx,0) * 80ms);}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;}
+  .sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:32px;}
+  .head,.nav,.main{padding-left:28px;padding-right:28px;}
+  .head{padding-top:48px;padding-bottom:32px;}
+  .head-meta{grid-template-columns:1fr 1fr;gap:24px;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .studio,.prospect-grid,.p2-grid{grid-template-columns:1fr;}
+  .head-title{font-size:38px;}
+  .sec-title{font-size:30px;}
+  .p2-title{font-size:34px;}
+  .p2-hero{padding:40px 28px;}
+}
+
+/* ============================================================
+   POLISH PASS
+   - Lifts base type to 15px, body to #1A1A1A for stronger contrast
+   - Raises small-text floors (nothing structural under ~10.5px)
+   - Tabular nums for any column of numbers
+   - Adds organic paper grain (SVG turbulence) at 4% opacity
+   - Slow ambient drift behind the hero per spec §7
+   ============================================================ */
+body{
+  font-size:15px;
+  line-height:1.65;
+  color:#1A1A1A;
+  font-feature-settings:'tnum' 1,'ss01' 1,'cv11' 1,'cv01' 1,'kern' 1;
+}
+.head-sub,.sec-sub{font-size:14.5px;line-height:1.7;color:#535351;}
+.callout{font-size:13.5px;line-height:1.7;}
+
+/* eyebrows / labels — uniform 10.5px, .14–.18em tracking */
+.head-eyebrow,.sec-eyebrow,.p2-eyebrow,.sb-eyebrow,.panel-eyebrow,.seq-eyebrow,.stat-eyebrow,.os-meta,.head-meta > div{
+  font-size:10.5px;letter-spacing:.16em;
+}
+.os-path{font-size:11.5px;letter-spacing:.02em;}
+.tab{font-size:13.5px;}
+.tab .num{font-size:10.5px;letter-spacing:.04em;}
+
+/* Sidebar */
+.sb-row{font-size:13.5px;padding:11px 0;}
+.sb-row .v{font-size:13px;font-variant-numeric:tabular-nums;}
+.sb-queue-item{font-size:13px;padding:11px 0;}
+.sb-queue-item .num{font-size:10.5px;}
+.sb-quote{font-size:16.5px;line-height:1.6;}
+.sb-quote-attr{font-size:10.5px;letter-spacing:.14em;}
+
+/* Stats */
+.stat-delta{font-size:11.5px;letter-spacing:.02em;}
+.stat-val{font-variant-numeric:tabular-nums;}
+.stat-val .pre{font-variant-numeric:lining-nums;}
+
+/* Table */
+.tbl th{font-size:10.5px;letter-spacing:.14em;padding:16px 22px;}
+.tbl td{padding:18px 22px;font-size:13.5px;}
+.cell-mono{font-size:12.5px;font-variant-numeric:tabular-nums;}
+.cell-num{font-variant-numeric:tabular-nums;}
+.cell-name b{font-size:14px;}
+.cell-name span{font-size:11.5px;}
+.chan{font-size:10.5px;letter-spacing:.1em;gap:6px;}
+
+/* Tags & filters */
+.tag{font-size:10.5px;letter-spacing:.08em;padding:3.5px 10px;border:1px solid transparent;}
+.filt{font-size:12px;padding:8px 15px;font-weight:500;}
+.chf{font-size:11px;padding:6px 12px;letter-spacing:.08em;}
+
+/* Outreach */
+.oc-name{font-size:15px;letter-spacing:-.005em;}
+.oc-contact{font-size:11.5px;line-height:1.5;}
+.oc-why{font-size:13px;line-height:1.6;}
+.oc-why .lbl{font-size:9.5px;letter-spacing:.14em;}
+.oc-prev{font-size:14.5px;line-height:1.7;}
+.oc-num{font-size:11.5px;}
+
+/* Prospects */
+.pc-name{font-size:16.5px;line-height:1.25;letter-spacing:-.014em;}
+.pc-type{font-size:10.5px;letter-spacing:.1em;}
+.pc-why{font-size:13.5px;line-height:1.65;}
+.pc-channels .chip{font-size:10.5px;letter-spacing:.08em;padding:4px 9px;}
+.pc-val{font-size:12.5px;letter-spacing:.02em;font-variant-numeric:tabular-nums;}
+.pc-val .lbl{font-size:9.5px;letter-spacing:.14em;}
+
+/* Studio — posts */
+.post-eyebrow{font-size:10.5px;letter-spacing:.14em;}
+.post-caption{font-size:15px;line-height:1.75;}
+.post-hashtags{font-size:11px;line-height:1.85;letter-spacing:.01em;}
+.boost{font-size:10.5px;letter-spacing:.1em;padding:5px 11px;}
+
+/* Studio — ads */
+.ad-plat{font-size:10.5px;letter-spacing:.12em;}
+.ad-copy{font-size:14px;line-height:1.65;}
+.ad-aud{font-size:12px;line-height:1.65;font-variant-numeric:tabular-nums;}
+.ad-aud .lbl{font-size:9.5px;letter-spacing:.14em;}
+.ad-why{font-size:13px;line-height:1.65;}
+.ad-budget .est{font-size:12px;font-variant-numeric:tabular-nums;}
+.ad-budget .lbl{font-size:9.5px;letter-spacing:.14em;}
+.ad-budget .val{font-variant-numeric:tabular-nums;}
+
+/* Slider */
+.slider-est{font-size:12px;line-height:1.8;font-variant-numeric:tabular-nums;}
+.slider-val{font-variant-numeric:tabular-nums;}
+
+/* Sequence */
+.seq-txt{font-size:10.5px;letter-spacing:.08em;line-height:1.4;}
+
+/* Panel */
+.panel-meta{font-size:12px;line-height:1.7;letter-spacing:.02em;}
+.panel-subj{font-size:13px;}
+.panel-draft{font-size:17.5px;line-height:1.78;color:#1A1A1A;}
+
+/* Modal */
+.mt{font-size:22px;letter-spacing:-.014em;}
+.if-h{font-size:10.5px;letter-spacing:.12em;}
+.if-from{font-size:11.5px;letter-spacing:.02em;}
+.if-msg{font-size:16.5px;line-height:1.7;}
+
+/* Roadmap */
+.p2-card .desc{font-size:13.5px;line-height:1.7;}
+.p2-feat{font-size:13px;line-height:1.6;}
+.p2-tl-when{font-size:10.5px;letter-spacing:.12em;}
+.p2-tl-head{font-size:15px;}
+.p2-tl-desc{font-size:13.5px;line-height:1.7;}
+
+/* Empty */
+.empty-title{font-size:24px;letter-spacing:-.016em;}
+.empty-sub{font-size:13px;}
+
+/* Buttons polish */
+.btn{font-size:12.5px;font-weight:500;padding:9px 15px;}
+.btn-sm{font-size:11.5px;padding:7px 12px;}
+.btn-xs{font-size:10.5px;padding:5px 10px;}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+
+/* Subtle organic paper grain — fixed overlay, multiply blend, ~4% opacity */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size:220px 220px;
+  opacity:.045;mix-blend-mode:multiply;
+}
+.os-window,.modal-bg,.toast{position:relative;z-index:2;}
+.modal-bg{z-index:200;}.toast{z-index:999;}
+
+/* Slow ambient drift behind the hero (spec §7 — opacity .03–.04, 20s+) */
+.head{isolation:isolate;}
+.head .ambient{
+  position:absolute;inset:auto -10% auto auto;top:-30%;width:55%;height:170%;
+  background:radial-gradient(closest-side, rgba(180,140,90,.14), transparent 70%);
+  filter:blur(50px);opacity:.7;pointer-events:none;z-index:-1;
+  animation:drift 32s ease-in-out infinite alternate;
+}
+.head .ambient.b{
+  inset:auto auto -30% -10%;top:auto;left:-10%;width:45%;height:160%;
+  background:radial-gradient(closest-side, rgba(80,110,90,.10), transparent 70%);
+  animation-duration:42s;animation-direction:alternate-reverse;
+}
+@keyframes drift{
+  0%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(-4%,3%) scale(1.06);}
+  100%{transform:translate(3%,-2%) scale(.96);}
+}
+
+/* Table row indicator on hover */
+.tbl tbody tr td:first-child{position:relative;}
+.tbl tbody tr td:first-child::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:transparent;transition:background .15s var(--ease);
+}
+.tbl tbody tr:hover td:first-child::before{background:var(--ink);}
+
+/* Card hover — ultra subtle lift per spec */
+.oc,.pc-card,.post-card,.ad-card,.p2-card{
+  transition:border-color .2s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.oc:hover,.pc-card:hover,.post-card:hover,.ad-card:hover,.p2-card:hover{
+  box-shadow:0 2px 10px rgba(0,0,0,.045);
+}
+
+/* Section title slightly tighter for readability */
+.sec-title em,.head-title em,.p2-title em{font-style:italic;}
+
+/* Make hashtag block easier to scan: less wordy mono */
+.post-hashtags{color:#7B7A75;}
+
+/* Refined post visual decorative dot */
+.post-visual::before{
+  width:30px;height:30px;border:1px solid rgba(17,17,17,.14);
+  background:rgba(255,255,255,.6);
+}
+
+/* ============================================================
+   BRAND LAYER — Vitality Bowls
+   Purple #4B2150 = primary (buttons, active accents, sequence)
+   Green  #6AB04C = live indicator only (non-text — contrast too low)
+   Green-deep #3D7A2A = brand-green for readable text/deltas
+   Light bg #F5F5F5 = subtle warm-neutral
+   Spec compliance: purple is near-black contrast, used as text/UI;
+   no large primary-colored backgrounds; green is icon/dot only.
+   ============================================================ */
+:root{
+  --brand-purple:#4B2150;
+  --brand-purple-2:#6A2E72;
+  --brand-purple-soft:#F4ECF6;
+  --brand-green:#6AB04C;
+  --brand-green-deep:#3D7A2A;
+  --brand-green-soft:#ECF5E5;
+  --brand-light:#F5F5F5;
+}
+
+/* Primary CTA = brand purple instead of pure ink */
+.btn-primary{background:var(--brand-purple);color:#fff;}
+.btn-primary:hover{background:var(--brand-purple-2);}
+.btn:focus-visible{outline:2px solid var(--brand-purple);outline-offset:2px;}
+
+/* Toast = purple instead of black, feels on-brand */
+.toast{background:var(--brand-purple);}
+
+/* Sequence: completed steps use brand purple */
+.seq-step.done .seq-dot{background:var(--brand-purple);border-color:var(--brand-purple);}
+.seq-step.done::after{background:var(--brand-purple);}
+.seq-step.active .seq-dot{border-color:var(--brand-purple);color:var(--brand-purple);}
+.seq-step.active .seq-dot::after{border-color:var(--brand-purple);}
+
+/* Active tab underline keeps ink for ultimate readability — but the active
+   pipeline panel and outreach pending markers shift to brand purple */
+.oc.pending{border-left-color:var(--brand-purple);}
+.callout{border-left-color:var(--brand-purple);}
+.ad-why{border-left-color:var(--brand-purple);}
+.sb-quote{border-left-color:var(--brand-purple);}
+
+/* Sidebar quote attribution + brand quote text emphasis */
+.sb-quote{color:#222;}
+
+/* Stat positive deltas use brand-green-deep for readable contrast */
+.stat-delta.pos{color:var(--brand-green-deep);}
+
+/* Live indicator dots use brand green */
+.os-status::before{background:var(--brand-green);box-shadow:0 0 0 3px rgba(106,176,76,.18);}
+
+/* Pale-green tag (Sent/Closed/Active) → brand-green tinted */
+.tag-g{background:var(--brand-green-soft);color:var(--brand-green-deep);}
+/* Pale-purple tag → brand purple */
+.tag-p{background:var(--brand-purple-soft);color:var(--brand-purple);}
+
+/* Score bar uses brand purple instead of ink */
+.score-fill{background:var(--brand-purple);}
+
+/* Phase II icon backgrounds — subtle brand tinting on the green and purple ones */
+.p2-icon.ig-g{background:var(--brand-green-soft);color:var(--brand-green-deep);}
+.p2-icon.ig-p{background:var(--brand-purple-soft);color:var(--brand-purple);}
+
+/* Phase II feature-row dots */
+.p2-card.ig .p2-feat::before{background:var(--brand-green-deep);}
+.p2-card.ip .p2-feat::before{background:var(--brand-purple);}
+
+/* Hero rule — small brand-purple accent under the head title */
+.head-title{position:relative;}
+.head-title::after{
+  content:"";display:block;width:48px;height:2px;
+  background:var(--brand-purple);margin-top:24px;border-radius:1px;
+}
+.sec-title::after{
+  content:"";display:block;width:36px;height:2px;
+  background:var(--brand-purple);margin-top:18px;border-radius:1px;
+}
+.p2-title::after{
+  content:"";display:block;width:48px;height:2px;
+  background:var(--brand-purple);margin-top:22px;border-radius:1px;
+}
+
+/* OS-bar brand mark */
+.os-mark{
+  width:22px;height:22px;border-radius:6px;
+  background:var(--brand-purple);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-serif);font-size:12px;font-style:italic;
+  font-weight:500;letter-spacing:-.02em;
+  margin-right:4px;
+}
+
+/* Hero ambient — add a subtle brand-purple drift */
+.head .ambient.c{
+  position:absolute;inset:auto auto -10% 35%;top:auto;width:35%;height:120%;
+  background:radial-gradient(closest-side, rgba(75,33,80,.07), transparent 70%);
+  filter:blur(60px);opacity:.8;pointer-events:none;z-index:-1;
+  animation:drift 38s ease-in-out infinite alternate;animation-delay:-6s;
+}
+
+/* Light_bg neutral: tighten os-bar background a hair */
+.os-bar{background:rgba(255,255,255,.88);}
+
+/* Polish: section title italic uses brand-deepened tone */
+.head-title em,.sec-title em,.p2-title em{color:#0F0E10;}
+
+/* Active tab accent: thin double-line for editorial precision */
+.tab.active{border-bottom:2px solid var(--brand-purple);}
+.tab.active .num{color:var(--brand-purple);}
+
+/* Refined Sent / Live / Posted indicator color in inline confirmations */
+.panel-actions [style*="--pg-fg"],
+[style*="color:var(--pg-fg)"]{color:var(--brand-green-deep) !important;}
+
+/* Sticky table header inside the table */
+.table-wrap{overflow:visible;}
+.tbl thead th{position:sticky;top:84px;background:var(--surface);z-index:5;}
+
+/* Subtle row tint on hover via warm light bg */
+.tbl tbody tr:hover{background:var(--brand-light);}
+
+/* Refined slider thumb: brand purple */
+input[type=range]::-webkit-slider-thumb{
+  background:var(--brand-purple);
+  box-shadow:0 0 0 1px var(--brand-purple);
+}
+input[type=range]::-moz-range-thumb{
+  background:var(--brand-purple);
+  box-shadow:0 0 0 1px var(--brand-purple);
+}
+
+/* Boost badge: align with brand */
+.boost{
+  background:var(--brand-purple-soft);color:var(--brand-purple);
+}
+
+/* Refined sb-quote-attr for hierarchy */
+.sb-quote-attr{color:#6E6C68;}
+
+/* Section eyebrow gets a tiny purple accent dot */
+.sec-eyebrow,.head-eyebrow,.p2-eyebrow{display:inline-flex;align-items:center;gap:10px;}
+.sec-eyebrow::before,.p2-eyebrow::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--brand-purple);flex-shrink:0;
+}
+
+/* Refine the ambient drift behind hero so it warms toward brand */
+.head .ambient{
+  background:radial-gradient(closest-side, rgba(106,176,76,.10), transparent 70%);
+}
+.head .ambient.b{
+  background:radial-gradient(closest-side, rgba(75,33,80,.08), transparent 70%);
+}
+
+/* ============================================================
+   FONT REFINEMENT — drop the heavy feeling
+   - Instrument Serif (single weight 400) is naturally elegant
+     and reads thinner than Newsreader at large display sizes.
+   - Body color muted from #1A1A1A to #2A2A2A so paragraphs
+     don't feel dense.
+   - Headlines: looser optical letter-spacing and lighter
+     line-height; weight stays 400 (no 600/500/800 anywhere
+     critical).
+   ============================================================ */
+:root{
+  --font-serif:'Instrument Serif','Newsreader','Lyon Text',Georgia,serif;
+}
+body{color:#2A2A2A;}
+
+/* Display headlines */
+.head-title,.sec-title,.p2-title{
+  font-weight:400;
+  letter-spacing:-.012em;
+  line-height:1.08;
+}
+.head-title{font-size:54px;line-height:1.05;}
+.sec-title{font-size:40px;line-height:1.06;}
+.p2-title{font-size:44px;line-height:1.05;}
+
+/* Italic emphasis stays tonally lighter */
+.head-title em,.sec-title em,.p2-title em{
+  font-style:italic;color:#1F1E20;font-weight:400;
+}
+
+/* Section sub & general serif body get the lighter weight too */
+.panel-draft,.if-msg,.oc-prev,.post-caption,.sb-quote{
+  font-weight:400;
+}
+
+/* Big numbers — Instrument Serif at 400 is a touch chunky for
+   numerals. Switch the giant numerals to Newsreader 300 for a
+   refined look while keeping the editorial body in Instrument. */
+.stat-val,.cell-num,.pc-score,.slider-val,.ad-budget .val{
+  font-family:'Newsreader','Instrument Serif',Georgia,serif;
+  font-weight:300;
+  letter-spacing:-.018em;
+}
+
+/* Sans weights — drop semibolds where they read as bold blocks */
+.cell-name b,.oc-name,.pc-name,.sb-row .v,.tab.active{font-weight:500;}
+.btn,.btn-primary{font-weight:500;}
+.tag{font-weight:500;}
+
+/* Mono labels — tighter tracking, lighter weight */
+.head-eyebrow,.sec-eyebrow,.p2-eyebrow,.sb-eyebrow,.panel-eyebrow,
+.seq-eyebrow,.stat-eyebrow,.os-meta,.head-meta > div,
+.os-path,.cell-mono,.tab .num,.chan,.if-h,.pc-type,
+.pc-channels .chip,.pc-val,.pc-val .lbl,
+.ad-plat,.ad-aud,.ad-aud .lbl,.ad-budget .lbl,.ad-budget .est,
+.slider-est,.slider-lbl,.post-eyebrow,.post-hashtags,
+.boost,.seq-txt,.oc-contact,.oc-num,.oc-why .lbl,
+.if-from,.p2-tl-when{
+  font-weight:400;letter-spacing:.12em;
+}
+.os-path,.cell-mono,.if-from{letter-spacing:.02em;}
+.post-hashtags{letter-spacing:.01em;}
+.cell-num{letter-spacing:-.022em;}
+
+/* Reduce "stat-val" pre $ symbol weight */
+.stat-val .pre{font-size:24px;color:#888;font-weight:300;}
+
+/* Ensure brand-purple buttons read crisp not chunky */
+.btn-primary{padding:9px 16px;letter-spacing:.005em;}
+
+/* Subtle: hairline under headline becomes thinner / brand-green */
+.head-title::after{height:1.5px;width:44px;background:var(--brand-green);}
+.sec-title::after{height:1.5px;width:32px;background:var(--brand-green);}
+.p2-title::after{height:1.5px;width:44px;background:var(--brand-green);}
+
+/* ============================================================
+   BRAND-COLORFUL PASS — match the live Vitality Bowls homepage
+   - Hero is solid brand purple, white serif, green pill CTA
+   - Roadmap hero → solid brand purple
+   - Stat grid → 4 pastel-tinted cards like "Popular menu items"
+   - Primary buttons → green pill rounded-full
+   - Loyalty-Club-style green stripe at bottom of Studio
+   - Tabs → green underline + brand-purple text on active
+   Intentionally departs from minimalist editorial vocab in
+   favor of brand recognition.
+   ============================================================ */
+
+/* HERO — solid brand purple */
+.head{
+  background:var(--brand-purple);
+  color:#fff;
+  border-bottom:none;
+  padding:40px 56px 56px;
+}
+.head::after{
+  background:
+    radial-gradient(circle at 85% 18%, rgba(106,176,76,.20), transparent 55%),
+    radial-gradient(circle at 12% 92%, rgba(255,255,255,.06), transparent 50%);
+}
+.head .ambient,.head .ambient.b,.head .ambient.c{display:none;}
+.head-eyebrow{color:var(--brand-green);}
+.head-eyebrow::before{display:none;}
+.head-eyebrow .icon{color:var(--brand-green);}
+.head-title{color:#fff;}
+.head-title em{color:rgba(255,255,255,.85);}
+.head-sub{color:rgba(255,255,255,.78);}
+.head-meta{border-top:1px solid rgba(255,255,255,.18);}
+.head-meta > div{color:rgba(255,255,255,.62);}
+.head-meta b{color:#fff;}
+/* Warning oranges in the hero meta need to read on purple */
+.head-meta b[style*="--po-fg"]{color:#FFD89A !important;}
+
+/* Brand wordmark + hero CTAs */
+.brand-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:32px;position:relative;z-index:1;flex-wrap:wrap;gap:14px;
+}
+.brand-mark{
+  display:flex;align-items:center;gap:11px;
+  font-family:var(--font-serif);font-size:22px;font-weight:400;
+  color:#fff;letter-spacing:-.012em;
+}
+.brand-mark .dot{
+  width:11px;height:11px;border-radius:50%;
+  background:var(--brand-green);
+  box-shadow:0 0 0 4px rgba(106,176,76,.22);
+  flex-shrink:0;
+}
+.brand-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.btn-hero{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--brand-green);color:#fff;border:none;
+  border-radius:9999px;padding:10px 18px;
+  font-family:var(--font-sans);font-size:12.5px;font-weight:500;
+  cursor:pointer;transition:all .15s var(--ease);
+}
+.btn-hero:hover{background:#5A9C3F;}
+.btn-hero:active{transform:scale(.98);}
+.btn-hero-ghost{
+  background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,.55);
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+
+/* TABS — green underline on active, purple text */
+.nav{background:#fff;}
+.tab.active{border-bottom-color:var(--brand-green);color:var(--brand-purple);font-weight:500;}
+.tab.active .num{color:var(--brand-green);}
+
+/* PRIMARY = green pill */
+.btn-primary{
+  background:var(--brand-green);color:#fff;
+  border-radius:9999px;padding:9px 17px;
+  font-weight:500;
+}
+.btn-primary:hover{background:#5A9C3F;}
+.btn-primary:focus-visible{outline:2px solid var(--brand-purple);outline-offset:3px;}
+
+/* Ghost / mute pills */
+.btn-ghost,.btn-mute{border-radius:9999px;}
+.btn-ghost{border-color:#D8D6D1;}
+
+/* Filter pills: brand purple when active */
+.filt.active{background:var(--brand-purple);color:#fff;border-color:var(--brand-purple);}
+
+/* STAT GRID — 4 pastel-tinted "menu items" cards */
+.stat-grid{
+  background:transparent;border:none;border-radius:0;
+  gap:14px;overflow:visible;
+  grid-template-columns:repeat(4,1fr);
+}
+.stat{
+  border:1px solid var(--border);border-radius:14px;
+  padding:24px 26px;
+}
+.stat:nth-child(1){background:#F2EAF8;}
+.stat:nth-child(2){background:#ECF5E5;}
+.stat:nth-child(3){background:#FBEFE2;}
+.stat:nth-child(4){background:#FCEAF1;}
+.stat:nth-child(1) .stat-eyebrow{color:var(--brand-purple);}
+.stat:nth-child(2) .stat-eyebrow{color:var(--brand-green-deep);}
+.stat:nth-child(3) .stat-eyebrow{color:#8A4A0F;}
+.stat:nth-child(4) .stat-eyebrow{color:#9A2C5A;}
+
+/* ROADMAP HERO — solid brand purple */
+.p2-hero{
+  background:var(--brand-purple);color:#fff;border-color:transparent;
+}
+.p2-hero::after{
+  background:radial-gradient(circle at 85% 15%, rgba(106,176,76,.20), transparent 55%);
+}
+.p2-eyebrow{color:var(--brand-green);}
+.p2-eyebrow::before{display:none;}
+.p2-title{color:#fff;}
+.p2-title em{color:rgba(255,255,255,.85);}
+.p2-title::after{background:var(--brand-green);}
+.p2-sub{color:rgba(255,255,255,.78);}
+
+/* Slider thumb: brand green */
+input[type=range]::-webkit-slider-thumb{background:var(--brand-green);box-shadow:0 0 0 1px var(--brand-green);}
+input[type=range]::-moz-range-thumb{background:var(--brand-green);box-shadow:0 0 0 1px var(--brand-green);}
+.score-fill{background:var(--brand-green);}
+
+/* Loyalty-club CTA stripe */
+.loyalty-cta{
+  margin-top:36px;background:var(--brand-green);color:#fff;
+  border-radius:14px;padding:26px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.loyalty-cta::before{
+  content:"";position:absolute;inset:auto auto -50% -10%;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.12), transparent 65%);
+  pointer-events:none;
+}
+.loyalty-cta-text{flex:1;min-width:280px;position:relative;}
+.loyalty-cta-text strong{
+  display:block;font-family:var(--font-serif);font-weight:400;
+  font-size:24px;letter-spacing:-.018em;color:#fff;margin-bottom:4px;line-height:1.15;
+}
+.loyalty-cta-text span{font-size:13px;color:rgba(255,255,255,.88);}
+.loyalty-cta .btn-loyalty{
+  display:inline-flex;align-items:center;gap:7px;
+  background:#fff;color:var(--brand-purple);border:none;
+  border-radius:9999px;padding:11px 20px;
+  font-family:var(--font-sans);font-size:13px;font-weight:500;
+  cursor:pointer;transition:all .15s var(--ease);position:relative;
+}
+.loyalty-cta .btn-loyalty:hover{background:#F5F5F5;}
+.loyalty-cta .btn-loyalty:active{transform:scale(.98);}
+
+/* Sidebar success target gets a soft purple tint card */
+.sidebar > div:first-child{
+  background:#F2EAF8;
+  border:1px solid var(--border);border-radius:14px;
+  padding:18px 20px;
+}
+.sidebar > div:nth-child(2){
+  background:#FBEFE2;
+  border:1px solid var(--border);border-radius:14px;
+  padding:18px 20px;
+}
+.sidebar > div:first-child .sb-eyebrow{color:var(--brand-purple);}
+.sidebar > div:nth-child(2) .sb-eyebrow{color:#8A4A0F;}
+.sidebar > div:first-child .sb-row{border-bottom-color:rgba(75,33,80,.12);}
+.sidebar > div:nth-child(2) .sb-queue-item{border-bottom-color:rgba(138,74,15,.14);}
+
+/* Section eyebrow colors carry brand */
+.sec-eyebrow{color:var(--brand-purple);}
+.sec-eyebrow::before{background:var(--brand-green);}
+
+/* Tighten the body grain on the brand-heavy page */
+body::before{opacity:.035;}
+
+/* Restored "tag" Sent uses brand-green-soft already; pending stays brand-orange */
+
+/* ============================================================
+   INLINE PIPELINE PREVIEW — expands in place under the clicked
+   row instead of dropping to a bottom panel.
+   ============================================================ */
+.tbl tbody tr.panel-row td{
+  padding:0 22px 14px;border-top:none;background:#FAF7FB;
+}
+.tbl tbody tr.panel-row{background:#FAF7FB;}
+.tbl tr.panel-row .panel{
+  margin:6px 0 0;border-radius:14px;
+  box-shadow:0 6px 28px rgba(75,33,80,.08);
+  border:1px solid #E7DDEB;
+  background:#fff;overflow:hidden;
+  animation:rowExpand .32s var(--ease) both;
+}
+@keyframes rowExpand{
+  from{opacity:0;transform:translateY(-6px);}
+  to{opacity:1;transform:none;}
+}
+.tbl tbody tr.row-open td{background:#FAF7FB;}
+.tbl tbody tr.row-open td:first-child::before{background:var(--brand-purple);}
+.tbl tbody tr.row-open .av{
+  background:var(--brand-purple);color:#fff;border-color:var(--brand-purple);
+  transition:all .2s var(--ease);
+}
+
+/* Outreach inline expand */
+.oc{cursor:pointer;}
+.oc.expanded{
+  border-color:var(--brand-purple);
+  box-shadow:0 6px 28px rgba(75,33,80,.08);
+  background:#FBF8FC;
+}
+.oc-full{
+  margin-top:14px;padding-top:16px;
+  border-top:1px solid var(--border);
+  animation:rowExpand .32s var(--ease) both;
+}
+.oc-full .panel-subj{margin-bottom:12px;}
+.oc-full .panel-draft{
+  font-size:15.5px;line-height:1.72;
+  background:#fff;border-radius:10px;
+  padding:16px 22px;border-left:2px solid var(--brand-purple);
+  margin-bottom:0;max-width:none;
+}
+.oc-full[hidden]{display:none !important;}
+
+/* Prospect card click hint */
+.pc-card{cursor:pointer;}
+.pc-card.expanded{
+  border-color:var(--brand-purple);
+  box-shadow:0 6px 28px rgba(75,33,80,.08);
+}
+.pc-detail{
+  margin-top:16px;padding-top:16px;
+  border-top:1px solid var(--border);
+  animation:rowExpand .3s var(--ease) both;
+}
+.pc-detail-eyebrow{
+  font-family:var(--font-mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--brand-purple);margin-bottom:8px;
+}
+.pc-detail-draft{
+  font-family:var(--font-serif);font-size:15px;line-height:1.7;
+  color:var(--ink-2);background:#FBF8FC;
+  border:1px solid #EAE0EE;border-radius:10px;padding:14px 18px;
+  margin-bottom:0;
+}
+.pc-detail[hidden]{display:none !important;}
+
+/* Fix: an earlier polish rule accidentally set .modal-bg to position:relative,
+   which dumped the modal into document flow (forcing scroll-to-find).
+   Force back to fixed centered overlay. */
+.modal-bg{position:fixed !important;inset:0 !important;z-index:200 !important;}
+.modal-bg.open{display:flex !important;}
+body.modal-open{overflow:hidden;}
+
+/* Phase II — Foundation block (before integrations) */
+.p2-foundation{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:32px 36px;margin-bottom:28px;position:relative;overflow:hidden;
+}
+.p2-foundation::before{
+  content:"";position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--brand-purple),var(--brand-green));
+}
+.p2-foundation-eyebrow{
+  font-family:var(--font-mono);font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.16em;
+  color:var(--brand-purple);margin-bottom:16px;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.p2-foundation-eyebrow::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--brand-green);
+}
+.p2-foundation-body{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:start;}
+.p2-foundation h4{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:28px;line-height:1.15;letter-spacing:-.022em;
+  color:var(--ink);margin-bottom:12px;
+}
+.p2-foundation h4 em{font-style:italic;}
+.p2-foundation p{
+  font-size:14px;line-height:1.7;color:var(--ink-3);max-width:48ch;
+}
+.p2-foundation-feats{
+  display:flex;flex-direction:column;gap:10px;
+  border-left:1px solid var(--border);padding-left:32px;
+}
+.p2-foundation-feat{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:13px;color:var(--ink-2);line-height:1.55;
+}
+.p2-foundation-feat::before{
+  content:"";width:6px;height:6px;background:var(--brand-purple);margin-top:7px;flex-shrink:0;
+}
+@media (max-width:980px){
+  .p2-foundation{padding:28px 24px;}
+  .p2-foundation-body{grid-template-columns:1fr;gap:24px;}
+  .p2-foundation-feats{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:20px;}
+  .p2-foundation h4{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Phosphor-inspired SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M8 14.5s5-4.5 5-8.5a5 5 0 1 0-10 0c0 4 5 8.5 5 8.5z"/><circle cx="8" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 16 16"><path fill="currentColor" d="M9.2 1L3 9h4l-1 6 6.2-8H8.2l1-6z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 8.5l3 3 7-7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4v3h-3M2.5 12V9h3"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M12.6 7a5 5 0 0 0-9.1-1M3.4 9a5 5 0 0 0 9.1 1"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M11 2.5l2.5 2.5L5 13.5H2.5V11l8.5-8.5z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="9" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M2.5 4.5L8 8.5l5.5-4"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 16 16"><rect x="2" y="4.5" width="12" height="9" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 4.5l1-1.5h3l1 1.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 16 16"><rect x="2" y="5" width="12" height="8.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 5V3.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 9h12" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-house" viewBox="0 0 16 16"><path d="M2.5 7.5L8 3l5.5 4.5v5.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V7.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.5 14V10h3v4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1l1.4 3.6L13 6l-3.6 1.4L8 11 6.6 7.4 3 6l3.6-1.4L8 1zm5 8l.8 1.7 1.7.8-1.7.8L13 14l-.8-1.7-1.7-.8 1.7-.8L13 9z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8 3v10M3 8h10"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M8 4.5V8l2.5 1.5"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 16 16"><rect x="1.5" y="2.5" width="13" height="9" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M5 14h6M8 11.5V14"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 16 16"><rect x="2" y="6" width="12" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M2 9.5h12M8 6v8"/><path d="M5.5 6c-1.4 0-2.5-1-2.5-2s1-1.5 2-1 3 3 3 3-1.5 0-2.5 0zm5 0c1.4 0 2.5-1 2.5-2s-1-1.5-2-1-3 3-3 3 1.5 0 2.5 0z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M2 13h12M4 13V8M7 13V5M10 13V9M13 13V3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.5l2 4.4 4.8.5-3.6 3.3 1 4.7L8 12l-4.2 2.4 1-4.7L1.2 6.4l4.8-.5L8 1.5z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.4 10.4L13.5 13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="os-window">
+
+<!-- OS BAR -->
+<div class="os-bar">
+  <div class="os-dots"><div class="os-dot"></div><div class="os-dot"></div><div class="os-dot"></div></div>
+  <div class="os-mark">V</div>
+  <div class="os-path">vitality-bowls<span class="sep">/</span>stamford<span class="sep">·</span>ai-growth-engine</div>
+  <div class="os-meta">
+    <div><svg class="icon icon-sm"><use href="#i-pin"/></svg> 1125 High Ridge Rd</div>
+    <div class="os-status">Approval-first · nothing auto-sends</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="head reveal" style="--idx:0">
+  <div class="ambient"></div>
+  <div class="ambient b"></div>
+  <div class="ambient c"></div>
+  <div class="brand-row">
+    <div class="brand-mark"><div class="dot"></div>Vitality Bowls</div>
+    <div class="brand-actions">
+      <button class="btn-hero btn-hero-ghost" onclick="showToast('Sample data — Stamford pilot')">Sample data</button>
+      <button class="btn-hero" onclick="document.querySelector('button.tab').click();window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'})">Open dashboard</button>
+    </div>
+  </div>
+  <div class="head-eyebrow">
+    <svg class="icon icon-sm"><use href="#i-bolt"/></svg>
+    Operator console — week 19
+  </div>
+  <h1 class="head-title">A growth engine for <em>Vitality Bowls</em>, Stamford.</h1>
+  <p class="head-sub">Five channels of catering outreach, drafted by AI, queued for one-tap approval. Built around the owner's daily rhythm — review in the morning, ship in minutes.</p>
+  <div class="head-meta">
+    <div>Goal<b>2 – 3 orders / week</b></div>
+    <div>AOV<b>$400 average</b></div>
+    <div>Catering today<b style="color:var(--po-fg)">&lt; 5%</b></div>
+    <div>EZ Cater inbound<b style="color:var(--po-fg)">Zero</b></div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="nav">
+  <button class="tab active" onclick="switchTab('pipeline',this)">Pipeline <span class="num">07</span></button>
+  <button class="tab" onclick="switchTab('outreach',this)">Outreach <span class="num">11</span></button>
+  <button class="tab" onclick="switchTab('prospects',this)">Prospects <span class="num">08</span></button>
+  <button class="tab" onclick="switchTab('content',this)">Studio <span class="num">06</span></button>
+  <button class="tab" onclick="switchTab('phase2',this)">Roadmap <span class="num">II</span></button>
+</nav>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div>
+    <div class="sb-eyebrow">Owner's success target</div>
+    <div class="sb-row"><span class="k">Orders / week</span><span class="v">2 – 3</span></div>
+    <div class="sb-row"><span class="k">Avg order value</span><span class="v">$400</span></div>
+    <div class="sb-row"><span class="k">Catering today</span><span class="v warn">&lt; 5%</span></div>
+    <div class="sb-row"><span class="k">EZ Cater inbound</span><span class="v warn">0</span></div>
+  </div>
+  <div>
+    <div class="sb-eyebrow">Awaiting approval — 5</div>
+    <div class="sb-queue-item"><span class="num">01</span><div>Email · UBS Stamford</div></div>
+    <div class="sb-queue-item"><span class="num">02</span><div>Instagram · CrossFit 203</div></div>
+    <div class="sb-queue-item"><span class="num">03</span><div>LinkedIn · WWE HR</div></div>
+    <div class="sb-queue-item"><span class="num">04</span><div>Nextdoor · High Ridge</div></div>
+    <div class="sb-queue-item"><span class="num">05</span><div>3 social posts this week</div></div>
+  </div>
+</aside>
+
+<main class="main">
+
+<!-- PIPELINE -->
+<section class="section visible" id="tab-pipeline">
+  <div class="sec-head reveal" style="--idx:1">
+    <div>
+      <div class="sec-eyebrow">I — Catering pipeline</div>
+      <h2 class="sec-title">Every lead, <em>tracked.</em></h2>
+      <p class="sec-sub">Click any row to read the AI draft. Approve in a tap; nothing leaves until you do.</p>
+    </div>
+    <button class="btn btn-primary" onclick="openModal()"><svg class="icon icon-sm"><use href="#i-bolt"/></svg> Simulate inquiry</button>
+  </div>
+
+  <div class="stat-grid reveal" style="--idx:2">
+    <div class="stat">
+      <div class="stat-eyebrow">Active leads</div>
+      <div class="stat-val">07</div>
+      <div class="stat-delta pos">↑ 3 this week</div>
+    </div>
+    <div class="stat">
+      <div class="stat-eyebrow">Pipeline value</div>
+      <div class="stat-val"><span class="pre">$</span>4,840</div>
+      <div class="stat-delta pos">↑ $1,200 vs last week</div>
+    </div>
+    <div class="stat">
+      <div class="stat-eyebrow">Pending approval</div>
+      <div class="stat-val">05</div>
+      <div class="stat-delta warn">Need your eyes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-eyebrow">Recurring accounts</div>
+      <div class="stat-val">01</div>
+      <div class="stat-delta pos">System working</div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn reveal" style="--idx:3">
+    <strong>EZ Cater gap.</strong> You're listed but receive zero inbound orders. This system reaches Stamford offices and medical buildings directly — building the pipeline EZ Cater hasn't delivered.
+  </div>
+
+  <div class="table-wrap reveal" style="--idx:4">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Contact</th>
+          <th>Channel</th>
+          <th>Group</th>
+          <th>Value</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="pipeline-body"></tbody>
+    </table>
+  </div>
+  <div id="pipeline-panel" style="display:none;"></div>
+</section>
+
+<!-- OUTREACH -->
+<section class="section" id="tab-outreach">
+  <div class="sec-head">
+    <div>
+      <div class="sec-eyebrow">II — Outreach &amp; approvals</div>
+      <h2 class="sec-title">Drafted, queued, <em>never sent without you.</em></h2>
+      <p class="sec-sub">AI writes every message. Pending items first. Clear the queue in about eight minutes.</p>
+    </div>
+    <div class="cell-mono"><svg class="icon icon-sm"><use href="#i-clock"/></svg> ~8 min to clear</div>
+  </div>
+
+  <div class="filters">
+    <button class="filt active" onclick="setView('pending',this)">Needs approval <span style="opacity:.7">5</span></button>
+    <button class="filt" onclick="setView('all',this)">All messages <span style="opacity:.7">11</span></button>
+    <button class="filt" onclick="setView('awaiting',this)">Awaiting reply <span style="opacity:.7">3</span></button>
+    <button class="filt" onclick="setView('sent',this)">Sent <span style="opacity:.7">3</span></button>
+  </div>
+  <div class="chfilters">
+    <button class="chf active" onclick="setCh('all',this)">All channels</button>
+    <button class="chf" onclick="setCh('ig',this)"><svg class="icon icon-sm"><use href="#i-cam"/></svg> Instagram</button>
+    <button class="chf" onclick="setCh('em',this)"><svg class="icon icon-sm"><use href="#i-mail"/></svg> Email</button>
+    <button class="chf" onclick="setCh('li',this)"><svg class="icon icon-sm"><use href="#i-brief"/></svg> LinkedIn</button>
+    <button class="chf" onclick="setCh('gm',this)"><svg class="icon icon-sm"><use href="#i-pin"/></svg> Google Maps</button>
+    <button class="chf" onclick="setCh('nd',this)"><svg class="icon icon-sm"><use href="#i-house"/></svg> Nextdoor</button>
+  </div>
+  <div id="outreach-list"></div>
+</section>
+
+<!-- PROSPECTS -->
+<section class="section" id="tab-prospects">
+  <div class="sec-head">
+    <div>
+      <div class="sec-eyebrow">III — Prospect finder</div>
+      <h2 class="sec-title">Within five miles of <em>1125 High Ridge Road.</em></h2>
+      <p class="sec-sub">Stamford and the surrounding trade area, scored weekly by catering fit. Highest-value targets surface first.</p>
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="refreshProspects()"><svg class="icon icon-sm"><use href="#i-rotate"/></svg> Refresh</button>
+  </div>
+  <div class="callout">
+    <strong>Priority.</strong> Corporate offices and medical buildings — the owner's highest-value targets. One recurring office account is the proof point that the system is working.
+  </div>
+  <div class="prospect-grid" id="prospect-grid"></div>
+</section>
+
+<!-- STUDIO -->
+<section class="section" id="tab-content">
+  <div class="sec-head">
+    <div>
+      <div class="sec-eyebrow">IV — Ad &amp; content studio</div>
+      <h2 class="sec-title">On-brand content. <em>Boosts you approve.</em></h2>
+      <p class="sec-sub">AI identifies your local audiences, writes the post, recommends what to boost. You set the budget. Nothing spends without you.</p>
+    </div>
+  </div>
+  <div class="studio">
+    <div class="studio-col">
+      <h3>This week's content</h3>
+      <p class="col-sub">Three posts ready. Each maps to a local audience. Review, approve, post — about five minutes for the week.</p>
+      <div id="post-list"></div>
+    </div>
+    <div class="studio-col">
+      <h3>Targeted ads</h3>
+      <p class="col-sub">AI turns your best content into ads and picks the right audience. You set the weekly budget; nothing runs until you approve.</p>
+      <div class="slider-card">
+        <div class="slider-head">
+          <div class="slider-lbl">Weekly ad budget</div>
+          <div class="slider-val" id="bval">$100</div>
+        </div>
+        <input type="range" min="25" max="300" value="100" step="25" oninput="updateBudget(this.value)"/>
+        <div class="slider-est" id="best">At <strong>$100/week</strong>: <strong>2,800–3,800</strong> Stamford impressions · <strong>12–18</strong> catering clicks · split <strong>$60 Meta · $25 Google · $15 Nextdoor</strong></div>
+      </div>
+      <div id="ad-list"></div>
+    </div>
+  </div>
+
+  <div class="loyalty-cta">
+    <div class="loyalty-cta-text">
+      <strong>Approve this week's content in five minutes.</strong>
+      <span>Three posts · three boosted ads · all drafted, all on-brand. You sign off, we ship.</span>
+    </div>
+    <button class="btn-loyalty" onclick="approveAllPending()"><svg class="icon icon-sm"><use href="#i-check"/></svg> Approve all pending</button>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="tab-phase2">
+  <div class="p2-hero">
+    <div class="p2-eyebrow">V — Roadmap</div>
+    <h2 class="p2-title">From <em>leads</em> to a single, fully-connected operation.</h2>
+    <p class="p2-sub">Phase I solves the owner's two stated problems — catering leads, follow-up, and social content. Phase II connects the register: POS data, loyalty, reviews, all feeding one engine.</p>
+  </div>
+
+  <div class="p2-foundation">
+    <div class="p2-foundation-eyebrow">Foundation · before Phase II ships</div>
+    <div class="p2-foundation-body">
+      <div>
+        <h4>From demo to a real tool, used <em>every day</em>.</h4>
+        <p>Today this is a polished demo running in a browser. The first move is taking it live — your own URL, a private login, and data that actually saves between visits. Everything in Phase II below assumes this foundation is in place.</p>
+      </div>
+      <div class="p2-foundation-feats">
+        <div class="p2-foundation-feat">Your own URL — something like vitalitybowls-stamford.com</div>
+        <div class="p2-foundation-feat">Private login for the owner and managers</div>
+        <div class="p2-foundation-feat">Every lead, approval, and follow-up saved automatically</div>
+        <div class="p2-foundation-feat">AI drafts in real time, not pre-written</div>
+        <div class="p2-foundation-feat">Works on phone or laptop, anywhere</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p2-grid">
+    <div class="p2-card io">
+      <div class="p2-icon ig-o"><svg class="icon icon-md"><use href="#i-monitor"/></svg></div>
+      <h4>Toast POS integration <span class="tag tag-o">Phase II</span></h4>
+      <p class="desc">Connect directly to the register. Every walk-in becomes a data point — AI learns which customers are catering prospects automatically.</p>
+      <div class="p2-feats">
+        <div class="p2-feat">Auto-capture walk-in customer data</div>
+        <div class="p2-feat">Identify repeat customers for catering outreach</div>
+        <div class="p2-feat">Close the loop between ads and actual sales</div>
+        <div class="p2-feat">Know which marketing drives in-store revenue</div>
+      </div>
+    </div>
+    <div class="p2-card ig">
+      <div class="p2-icon ig-g"><svg class="icon icon-md"><use href="#i-gift"/></svg></div>
+      <h4>Incentivio loyalty &amp; rewards <span class="tag tag-g">Phase II</span></h4>
+      <p class="desc">Turn one-time catering customers into recurring accounts. AI triggers personalized rewards at the right moment.</p>
+      <div class="p2-feats">
+        <div class="p2-feat">Auto-reward after first catering order</div>
+        <div class="p2-feat">30-day re-engagement for lapsed accounts</div>
+        <div class="p2-feat">"Book your next group lunch" reminder</div>
+        <div class="p2-feat">Recurring office account loyalty perks</div>
+      </div>
+    </div>
+    <div class="p2-card ib">
+      <div class="p2-icon ig-b"><svg class="icon icon-md"><use href="#i-chart"/></svg></div>
+      <h4>Advanced ad intelligence <span class="tag tag-b">Phase II</span></h4>
+      <p class="desc">Once catering revenue is established, AI scales spend automatically based on what's performing — no guesswork, no agency.</p>
+      <div class="p2-feats">
+        <div class="p2-feat">Auto-scale budget toward best performers</div>
+        <div class="p2-feat">A/B test captions and audiences weekly</div>
+        <div class="p2-feat">Revenue attribution per ad and channel</div>
+        <div class="p2-feat">Plain-English weekly performance summary</div>
+      </div>
+    </div>
+    <div class="p2-card ip">
+      <div class="p2-icon ig-p"><svg class="icon icon-md"><use href="#i-star"/></svg></div>
+      <h4>Review &amp; reputation engine <span class="tag tag-p">Phase II</span></h4>
+      <p class="desc">You have 50 Google reviews at five stars — your strongest asset. Phase II protects and grows it.</p>
+      <div class="p2-feats">
+        <div class="p2-feat">AI drafts a response to every Google review</div>
+        <div class="p2-feat">Post-catering review request, sent automatically</div>
+        <div class="p2-feat">Negative review alerts — respond in minutes</div>
+        <div class="p2-feat">Turn five-star reviews into social proof</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p2-tl">
+    <div class="p2-tl-title">Build roadmap</div>
+    <div class="p2-tl-row">
+      <div class="p2-tl-when">Now · Phase I</div>
+      <div>
+        <div class="p2-tl-head">Leads, follow-up, social content</div>
+        <div class="p2-tl-desc">Pipeline tracking, AI outreach across five channels, approval-first workflow, prospect finder, social content and targeted ads. Solves the owner's two stated problems.</div>
+      </div>
+    </div>
+    <div class="p2-tl-row">
+      <div class="p2-tl-when">Pre-launch · 1–2 weeks</div>
+      <div>
+        <div class="p2-tl-head">From demo to real tool</div>
+        <div class="p2-tl-desc">The dashboard goes live at your own URL, behind a private login. Leads and approvals start saving automatically. AI begins drafting in real time. Everything in Phase II below plugs into this foundation.</div>
+      </div>
+    </div>
+    <div class="p2-tl-row">
+      <div class="p2-tl-when">Months 02 – 03</div>
+      <div>
+        <div class="p2-tl-head">Toast POS &amp; Incentivio rewards</div>
+        <div class="p2-tl-desc">Connect the register. Walk-ins feed the catering pipeline automatically. Loyalty rewards convert one-time orders into recurring accounts.</div>
+      </div>
+    </div>
+    <div class="p2-tl-row">
+      <div class="p2-tl-when">Months 04 – 06</div>
+      <div>
+        <div class="p2-tl-head">Advanced ads + review engine</div>
+        <div class="p2-tl-desc">Ads scale automatically based on performance. Review responses drafted by AI. Five-star reputation protected and amplified.</div>
+      </div>
+    </div>
+    <div class="p2-tl-row">
+      <div class="p2-tl-when">Month 06+</div>
+      <div>
+        <div class="p2-tl-head">One unified engine</div>
+        <div class="p2-tl-desc">POS data → prospect scoring → outreach → approval → loyalty rewards → social proof → ads → reviews. The owner spends twenty minutes a week. Everything else runs automatically.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div><!-- /layout -->
+</div><!-- /os-window -->
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal-bg" onclick="closeMBg(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="mh">
+      <div class="mt" id="modal-title">New inquiry</div>
+      <button class="mc" onclick="closeModal()" aria-label="close"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="mb" id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// === DATA ===
+const leads=[
+  {id:1,name:'Sarah K.',org:'UBS Stamford — Office Events',av:'SK',ch:'em',size:35,value:840,status:'needs-approval',item:'Working Lunch Bowls'},
+  {id:2,name:'Marcus J.',org:'SoulCycle High Ridge',av:'MJ',ch:'ig',size:18,value:360,status:'needs-approval',item:'Post-Workout Recovery Bowls'},
+  {id:3,name:'Dr. Patel',org:'Stamford Health Medical Group',av:'DP',ch:'em',size:45,value:1200,status:'awaiting',item:'Staff Appreciation Bowls'},
+  {id:4,name:'Jamie R.',org:'WWE Corporate HQ',av:'JR',ch:'li',size:60,value:1440,status:'needs-approval',item:'Team Lunch Package'},
+  {id:5,name:'Tia M.',org:'CrossFit 203 Stamford',av:'TM',ch:'ig',size:22,value:440,status:'sent',item:'Açaí Power Bowls'},
+  {id:6,name:'Kevin L.',org:'High Ridge Youth Soccer',av:'KL',ch:'nd',size:28,value:360,status:'sent',item:'Post-Game Pitaya Bowls'},
+  {id:7,name:'Amanda S.',org:'Stamford Law Associates',av:'AS',ch:'em',size:20,value:480,status:'closed',item:'Friday Lunch Bowls — Recurring'},
+];
+const drafts={
+  1:`Hi Sarah,\n\nI'm the owner of Vitality Bowls at 1125 High Ridge Road — right in your neighborhood.\n\nWe specialize in healthy catering for office teams: customizable açaí bowls and smoothie packages from $12 a person. For 35 people, approximately $840 delivered and ready to serve.\n\nWe'd love to be UBS's go-to for team lunches. Could I send our group menu this week?\n\nBest,\nVitality Bowls Stamford`,
+  2:`Hey SoulCycle High Ridge,\n\nWe're Vitality Bowls — right up the road on High Ridge. We cater for fitness communities and think your riders would love us.\n\nFor 18 people, our Post-Workout Recovery Bowl Package — açaí, pitaya, protein toppings, fully customizable — is about $360 for the group.\n\nWould love to drop samples for your instructors.`,
+  3:`Hi Dr. Patel,\n\nI'm the owner of Vitality Bowls at 1125 High Ridge Road. We specialize in healthy, allergen-friendly catering for medical teams and staff appreciation events.\n\nFor 45 people, approximately $1,200 delivered. Could I send a sample menu and proposal this week?\n\nBest,\nVitality Bowls Stamford`,
+  4:`Hi Jamie,\n\nWWE's HQ is right here in Stamford — as the owner of Vitality Bowls on High Ridge Road, I'd love to fuel your team.\n\nFor 60 people, our Team Lunch Package is fully customizable, about $1,440 delivered. We can accommodate recurring weekly arrangements.\n\nWould a quick intro call make sense?\n\nBest,\nVitality Bowls Stamford`,
+  5:`Sent — Tia confirmed catering for 22 CrossFit members next Saturday.`,
+  6:`Sent via Nextdoor — Kevin confirmed post-game catering for 28 youth soccer players.`,
+  7:`Closed — Amanda booked recurring Friday lunches for 20 people. $480/week recurring account.`,
+};
+const seqCfg=[
+  [{s:'active'},{s:'upcoming'},{s:'upcoming'},{s:'upcoming'}],
+  [{s:'active'},{s:'upcoming'},{s:'upcoming'},{s:'upcoming'}],
+  [{s:'done'},{s:'done'},{s:'active'},{s:'upcoming'}],
+  [{s:'active'},{s:'upcoming'},{s:'upcoming'},{s:'upcoming'}],
+  [{s:'done'},{s:'done'},{s:'done'},{s:'done'}],
+  [{s:'done'},{s:'done'},{s:'done'},{s:'done'}],
+  [{s:'done'},{s:'done'},{s:'done'},{s:'done'}],
+];
+const seqLbls=['Initial response','48-hour follow-up','7-day nudge','Confirmed'];
+
+const chMeta={
+  ig:{label:'Instagram DM',short:'Instagram',icon:'i-cam'},
+  em:{label:'Email',short:'Email',icon:'i-mail'},
+  li:{label:'LinkedIn',short:'LinkedIn',icon:'i-brief'},
+  gm:{label:'Google Maps',short:'Google Maps',icon:'i-pin'},
+  nd:{label:'Nextdoor',short:'Nextdoor',icon:'i-house'},
+};
+const smeta={
+  'needs-approval':{label:'Needs approval',cls:'tag-o'},
+  'awaiting':{label:'Awaiting reply',cls:'tag-y'},
+  'sent':{label:'Sent',cls:'tag-g'},
+  'closed':{label:'Closed',cls:'tag-g'},
+};
+const outreach=[
+  {id:10,ch:'ig',name:'CrossFit 203 Stamford',contact:'@crossfit203stamford',status:'pending',subj:null,draft:`Hey CrossFit 203 — we're Vitality Bowls on High Ridge Road, minutes from you. Açaí Power Bowls, Pitaya Recovery Bowls, smoothie packages built for performance.\n\nWould love to drop samples for your coaches.`,why:'0.6mi away · fitness community · no catering partner · post-WOD nutrition gap'},
+  {id:11,ch:'em',name:'UBS Stamford',contact:'events@ubs-stamford.com',status:'pending',subj:'Healthy team catering from your neighbors — Vitality Bowls',draft:`Hi there,\n\nI'm the owner of Vitality Bowls at 1125 High Ridge Road — healthy catering for corporate teams from $12 a person. Groups from 10–100, recurring arrangements available.\n\nCould I send a sample menu this week?\n\nBest,\nVitality Bowls Stamford`,why:'Major corporate office · 200+ employees · high recurring potential · 1.1mi away'},
+  {id:12,ch:'li',name:'WWE Corporate HQ',contact:'Sr. Director, Employee Experience',status:'pending',subj:'Employee wellness catering — Vitality Bowls Stamford',draft:`Hi [Name],\n\nI'm the owner of Vitality Bowls on High Ridge Road — healthy catering for corporate teams, well-suited to lunch programs and wellness events.\n\nWould love to connect if you're exploring local options.\n\nBest,\nVitality Bowls Stamford`,why:'WWE HQ in Stamford · large team · wellness focus · high-value recurring potential'},
+  {id:13,ch:'nd',name:'High Ridge Road Area',contact:'Nextdoor — Business post',status:'pending',subj:null,draft:`Hey High Ridge Road neighbors —\n\nVitality Bowls here at 1125 High Ridge Rd. We now cater office lunches, team events, youth sports, and community gatherings. Fresh, healthy, locally made.\n\nDrop us a message for group pricing.`,why:'Immediate trade area · office workers + families + fitness community'},
+  {id:14,ch:'em',name:'Stamford Health Medical',contact:'office@stamfordhealth.org',status:'pending',subj:'Healthy catering for your medical team — Vitality Bowls',draft:`Hi there,\n\nI'm the owner of Vitality Bowls at 1125 High Ridge Road. Healthy, allergen-friendly catering for medical teams and staff appreciation events.\n\nWould it help if I sent our group menu this week?\n\nBest,\nVitality Bowls Stamford`,why:'Medical office · health-aligned · staff appreciation events · recurring lunch potential'},
+  {id:15,ch:'gm',name:'Orangetheory Stamford',contact:'Google Maps — Owner message',status:'awaiting',subj:null,draft:`Hi Orangetheory Stamford,\n\nWe're Vitality Bowls at 1125 High Ridge Road — neighbors. We cater for post-workout events and staff lunches. Happy to bring samples.`,why:'Fitness alignment · 0.9mi · member events'},
+  {id:16,ch:'ig',name:'Equinox Stamford',contact:'@equinoxstamford',status:'awaiting',subj:null,draft:'Follow-up sent — awaiting reply from Equinox team.',why:'Premium fitness · member events · catering alignment'},
+  {id:17,ch:'em',name:'Synchrony Financial HQ',contact:'wellness@synchrony.com',status:'awaiting',subj:'Team catering — Vitality Bowls Stamford',draft:`Hi Synchrony Wellness Team,\n\nFollowing up about catering for your Stamford team. We're Vitality Bowls at 1125 High Ridge Road — from $12 a person. Happy to send a sample menu.\n\nBest,\nVitality Bowls Stamford`,why:'Major Stamford employer · wellness program · follow-up needed'},
+  {id:18,ch:'ig',name:'SoulCycle High Ridge',contact:'@soulcyclehighridge',status:'sent',subj:null,draft:'Sent — Marcus confirmed 18-person catering for next Friday.',why:'Confirmed booking — $360'},
+  {id:19,ch:'nd',name:'Newfield Neighborhood',contact:'Nextdoor — community post',status:'sent',subj:null,draft:'Sent — post reached 420 High Ridge area residents.',why:'Youth sports families · weekend events'},
+  {id:20,ch:'em',name:'Charter Communications',contact:'events@charter.com',status:'sent',subj:'Team catering — Vitality Bowls Stamford',draft:'Sent — intro sent to Charter events team.',why:'Large Stamford HQ · recurring potential'},
+];
+const prospects=[
+  {name:'UBS Financial Stamford',type:'Corporate HQ · 1.1 mi',score:97,why:'500+ employees, no current healthy lunch partner, corporate catering budget confirmed.',channels:['em','li'],val:'$1,500–3,000 / mo recurring'},
+  {name:'WWE Corporate HQ',type:'Corporate HQ · 1.4 mi',score:94,why:'Major Stamford employer, wellness initiatives, large team events.',channels:['li','em'],val:'$1,200–2,500 / event'},
+  {name:'Stamford Health Medical',type:'Medical office · 0.8 mi',score:92,why:'Health-aligned, staff appreciation events, recurring lunch potential.',channels:['em','gm'],val:'$800–1,400 / event'},
+  {name:'Synchrony Financial HQ',type:'Corporate HQ · 1.6 mi',score:90,why:'Large HQ, employee wellness program active, catering currently outsourced.',channels:['em','li'],val:'$1,000–2,000 / event'},
+  {name:'CrossFit 203 Stamford',type:'Gym · 0.6 mi',score:88,why:'Active community, no catering partner, post-WOD nutrition gap.',channels:['ig','em'],val:'$350–600 / event'},
+  {name:'Charter Communications',type:'Corporate HQ · 1.8 mi',score:85,why:'Major employer, recurring lunch program, decision-maker on LinkedIn.',channels:['li','em'],val:'$900–1,800 / event'},
+  {name:'Equinox Stamford',type:'Fitness · 0.9 mi',score:82,why:'Premium brand alignment, member events, staff wellness lunches.',channels:['ig','em'],val:'$400–800 / event'},
+  {name:'High Ridge Pediatrics',type:'Medical office · 0.4 mi',score:79,why:'Closest medical office, staff lunches, health-conscious team.',channels:['gm','em'],val:'$200–400 / event'},
+];
+
+const posts=[
+  {segment:'Post-workout crowd',segTag:'tag-g',headline:'Recovery starts here.',sub:'High Ridge Road · After your workout',bg:'bg-g',caption:`Your hardest workout deserves a recovery worth the effort.\n\nThe Açaí Power Bowl: antioxidants, healthy fats, and protein, built for the fitness community on High Ridge Road.\n\nTag a training partner.`,hashtags:'#StamfordFitness  #AçaíBowl  #PostWorkout  #HighRidgeRd  #VitalityBowls  #RecoveryFood  #HealthyStamford',boost:true,boostAmt:'$15',boostAud:'Fitness enthusiasts · 2-mile radius',status:'pending'},
+  {segment:'Office lunch crowd',segTag:'tag-b',headline:'Better than a sad desk lunch.',sub:'Corporate catering · Stamford CT',bg:'bg-b',caption:`Healthy. Customizable. Delivered to your office.\n\nWe cater group lunches for Stamford teams from $12 a person — açaí bowls, smoothie packages, more. No more boring lunch runs.\n\nDM us for group pricing.`,hashtags:'#StamfordBusiness  #OfficeLunch  #HealthyCatering  #StamfordCT  #CorporateWellness  #VitalityBowls  #GroupLunch',boost:true,boostAmt:'$25',boostAud:'Office workers · Stamford · ages 25–50',status:'pending'},
+  {segment:'Weekend families',segTag:'tag-p',headline:'Weekend fuel for the whole family.',sub:'Saturday & Sunday · High Ridge Rd',bg:'bg-p',caption:`Weekend mornings are better with a Vitality Bowl.\n\nBring the kids, build your own bowl, and start your weekend right. Open and ready on High Ridge Road — fresh ingredients, endless combinations.\n\nSee you Saturday.`,hashtags:'#StamfordFamilies  #WeekendVibes  #HealthyKids  #AçaíBowl  #FamilyBrunch  #StamfordCT  #VitalityBowls',boost:false,status:'pending'},
+];
+
+const ads=[
+  {id:'a1',platform:'meta',status:'pending',headline:"Stamford's healthiest team lunch — delivered.",copy:'Açaí bowls and smoothies for corporate teams, gyms and events. From $12 a person. 1125 High Ridge Road.',cta:'Get a quote',audience:'Office workers and the fitness crowd · 3-mile radius · High Ridge Rd corridor · ages 25–50',budget:60,reach:'2,200–3,200 impressions',clicks:'10–16 clicks',why:'Targets UBS, WWE, Synchrony staff — your highest-value catering segment — during lunch hours.'},
+  {id:'a2',platform:'google',status:'pending',headline:'Catering Stamford CT · Vitality Bowls',copy:'Healthy group catering for offices, gyms and events. From $12 a person. Customizable and delivered.',cta:'Request catering',audience:'Search: "catering Stamford CT" · "healthy office lunch Stamford" · "group food delivery CT"',budget:25,reach:'400–700 impressions',clicks:'14–22 clicks',why:'High-intent buyers already searching for Stamford catering — puts you at the top the moment they\'re ready to book.'},
+  {id:'a3',platform:'next',status:'pending',headline:'Vitality Bowls now catering Stamford',copy:"Hey neighbors — catering office lunches, team events and youth sports. Fresh, healthy, locally made. Group pricing on request.",cta:'Message us',audience:'High Ridge · Newfield · Turn of River neighborhoods',budget:15,reach:'400–600 impressions',clicks:'6–10 clicks',why:'Reaches families and community groups along your trade corridor — strongest for youth sports and neighborhood events.'},
+];
+const platMeta={
+  meta:{label:'Meta Ads',icon:'i-cam'},
+  google:{label:'Google Ads',icon:'i-search'},
+  next:{label:'Nextdoor Ad',icon:'i-house'},
+};
+const bmap={
+  25:'At <strong>$25/week</strong>: <strong>700–1,100</strong> impressions · <strong>4–8</strong> clicks · split <strong>$15 Meta · $10 Google</strong>',
+  50:'At <strong>$50/week</strong>: <strong>1,400–2,100</strong> impressions · <strong>8–14</strong> clicks · split <strong>$28 Meta · $15 Google · $7 Nextdoor</strong>',
+  75:'At <strong>$75/week</strong>: <strong>2,100–3,000</strong> impressions · <strong>10–16</strong> clicks · split <strong>$44 Meta · $20 Google · $11 Nextdoor</strong>',
+  100:'At <strong>$100/week</strong>: <strong>2,800–3,800</strong> impressions · <strong>12–18</strong> clicks · split <strong>$60 Meta · $25 Google · $15 Nextdoor</strong>',
+  125:'At <strong>$125/week</strong>: <strong>3,500–4,800</strong> impressions · <strong>14–22</strong> clicks · split <strong>$74 Meta · $33 Google · $18 Nextdoor</strong>',
+  150:'At <strong>$150/week</strong>: <strong>4,400–5,800</strong> impressions · <strong>16–26</strong> clicks · split <strong>$88 Meta · $40 Google · $22 Nextdoor</strong>',
+  200:'At <strong>$200/week</strong>: <strong>5,800–7,800</strong> impressions · <strong>20–34</strong> clicks · split <strong>$118 Meta · $52 Google · $30 Nextdoor</strong>',
+  250:'At <strong>$250/week</strong>: <strong>7,200–9,600</strong> impressions · <strong>24–40</strong> clicks · split <strong>$148 Meta · $64 Google · $38 Nextdoor</strong>',
+  300:'At <strong>$300/week</strong>: <strong>8,800–11,600</strong> impressions · <strong>28–46</strong> clicks · split <strong>$176 Meta · $78 Google · $46 Nextdoor</strong>',
+};
+
+// === RENDER ===
+function ico(id){return `<svg class="icon icon-sm"><use href="#${id}"/></svg>`;}
+
+function renderPipeline(){
+  document.getElementById('pipeline-body').innerHTML=leads.map(l=>{
+    const ch=chMeta[l.ch],sm=smeta[l.status];
+    return `<tr data-lead="${l.id}" onclick="selectLead(${l.id})">
+      <td><div class="cell-name"><div class="av">${l.av}</div><div><b>${l.name}</b><span>${l.org}</span></div></div></td>
+      <td><span class="chan">${ico(ch.icon)} ${ch.short}</span></td>
+      <td><span class="cell-mono">${l.size} people</span></td>
+      <td><span class="cell-num">$${l.value.toLocaleString()}</span></td>
+      <td><span class="tag ${sm.cls}">${sm.label}</span></td>
+      <td>${l.status==='needs-approval'
+        ?`<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();selectLead(${l.id})">Review draft ${ico('i-arrow')}</button>`
+        :`<button class="btn btn-mute btn-sm" onclick="event.stopPropagation();selectLead(${l.id})">View</button>`}
+      </td></tr>`;
+  }).join('');
+}
+function closeLeadPanel(){
+  document.querySelectorAll('#pipeline-body tr.panel-row').forEach(r=>r.remove());
+  document.querySelectorAll('#pipeline-body tr.row-open').forEach(r=>r.classList.remove('row-open'));
+}
+function selectLead(id, evt){
+  if(evt) evt.stopPropagation && evt.stopPropagation();
+  const row=document.querySelector(`#pipeline-body tr[data-lead="${id}"]`);
+  if(!row) return;
+  // toggle off if same row already open
+  const existing=row.nextElementSibling;
+  if(existing && existing.classList && existing.classList.contains('panel-row') && existing.dataset.lead===String(id)){
+    closeLeadPanel();
+    return;
+  }
+  closeLeadPanel();
+  const l=leads.find(x=>x.id===id);
+  const ch=chMeta[l.ch],ip=l.status==='needs-approval';
+  const subj=l.ch==='em'?`<div class="panel-subj"><b>Subject</b>${l.item} — Vitality Bowls Stamford</div>`:'';
+  const cfg=seqCfg[id-1]||seqCfg[0];
+  const seqH=seqLbls.map((s,i)=>`<div class="seq-step ${cfg[i].s}"><div class="seq-dot">${cfg[i].s==='done'?'<svg width="10" height="10" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 8.5l3 3 7-7"/></svg>':i+1}</div><div class="seq-txt">${s}</div></div>`).join('');
+  const panelHtml=`<div class="panel">
+    <div class="panel-head">
+      <div class="panel-eyebrow">${ip?'Draft · awaiting your approval':'Already sent'}</div>
+      <span class="chan" style="margin-left:auto">${ico(ch.icon)} ${ch.label}</span>
+    </div>
+    <div class="panel-body">
+      <div class="panel-meta">${l.name} · ${l.org} · ${l.size} people · $${l.value.toLocaleString()} · ${l.item}</div>
+      ${subj}
+      <div class="panel-draft">${(drafts[id]||'Draft unavailable.').replace(/\n/g,'<br/>')}</div>
+      <div class="seq">
+        <div class="seq-eyebrow">Follow-up sequence — auto-scheduled on approval</div>
+        <div class="seq-row">${seqH}</div>
+      </div>
+      ${ip?`<div class="panel-actions">
+        <button class="btn btn-primary" onclick="approveLead(${id})">${ico('i-check')} Approve &amp; send</button>
+        <button class="btn btn-ghost btn-sm" onclick="editDraft('lead',${id},event)">${ico('i-edit')} Edit</button>
+        <button class="btn btn-ghost btn-sm" onclick="regenerateDraft('lead',${id},event)">${ico('i-rotate')} Regenerate</button>
+        <button class="btn btn-mute btn-sm" onclick="closeLeadPanel()">${ico('i-x')} Dismiss</button>
+        <div class="panel-note">~30 sec of your time</div>
+      </div>`:`<div class="panel-actions"><div style="font-family:var(--font-mono);font-size:11px;color:var(--brand-green-deep);text-transform:uppercase;letter-spacing:.14em;">${ico('i-check')} Sent — sequence active</div></div>`}
+    </div>
+  </div>`;
+  const tr=document.createElement('tr');
+  tr.className='panel-row';
+  tr.dataset.lead=String(id);
+  tr.innerHTML=`<td colspan="6">${panelHtml}</td>`;
+  row.classList.add('row-open');
+  row.parentNode.insertBefore(tr,row.nextSibling);
+  // gentle scroll only if panel is partly off-screen
+  const rect=tr.getBoundingClientRect();
+  const vh=window.innerHeight||document.documentElement.clientHeight;
+  if(rect.bottom>vh-20 || rect.top<120){
+    tr.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function approveLead(id){
+  const l=leads.find(x=>x.id===id);if(l)l.status='awaiting';
+  closeLeadPanel();
+  renderPipeline();
+  showToast('Sent. Follow-up sequence scheduled.');
+}
+
+let vf='pending',cf='all';
+function renderOutreach(){
+  let items=outreach.filter(o=>o.status!=='skipped');
+  if(vf==='pending')items=items.filter(o=>o.status==='pending');
+  else if(vf==='awaiting')items=items.filter(o=>o.status==='awaiting');
+  else if(vf==='sent')items=items.filter(o=>o.status==='sent');
+  if(cf!=='all')items=items.filter(o=>o.ch===cf);
+  const el=document.getElementById('outreach-list');
+  if(!items.length){el.innerHTML=`<div class="empty">
+    <div class="empty-icon">${ico('i-check')}</div>
+    <div class="empty-title">${vf==='pending'?'Queue cleared.':'Nothing here.'}</div>
+    <div class="empty-sub">Try a different filter.</div>
+  </div>`;return;}
+  el.innerHTML=items.map((o,idx)=>{
+    const ch=chMeta[o.ch],ip=o.status==='pending';
+    const tagCls=ip?'tag-o':o.status==='sent'?'tag-g':'tag-y';
+    const tagLbl=ip?'Needs approval':o.status==='sent'?'Sent':'Awaiting reply';
+    const prevTxt=o.draft.substring(0,180).replace(/\n/g,' ');
+    return `<div class="oc${ip?' pending':''} reveal" data-id="${o.id}" style="--idx:${idx}" onclick="if(!event.target.closest('button,[contenteditable=true]'))toggleOutExpand(${o.id})">
+      <div class="oc-row">
+        <div class="oc-num">${String(idx+1).padStart(2,'0')}</div>
+        <div class="oc-body">
+          <div class="oc-meta">
+            <div class="oc-name">${o.name}</div>
+            <span class="chan">${ico(ch.icon)} ${ch.short}</span>
+            <span class="tag ${tagCls}">${tagLbl}</span>
+          </div>
+          <div class="oc-contact">${o.contact}</div>
+          <div class="oc-why"><span class="lbl">Why</span>${o.why}</div>
+          ${ip?`<div class="oc-prev">"${prevTxt}…"</div>`:''}
+          <div class="oc-full" hidden>
+            ${o.subj?`<div class="panel-subj"><b>Subject</b>${o.subj}</div>`:''}
+            <div class="panel-draft">${o.draft.replace(/\n/g,'<br/>')}</div>
+          </div>
+          <div class="oc-acts">
+            ${ip
+              ?`<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();approveOut(${o.id})">${ico('i-check')} Approve &amp; send</button>
+                <button class="btn btn-ghost btn-sm oc-toggle" onclick="event.stopPropagation();toggleOutExpand(${o.id})">${ico('i-arrow')} Full preview</button>
+                <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();editDraft('outreach',${o.id},event)">${ico('i-edit')} Edit</button>
+                <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();regenerateDraft('outreach',${o.id},event)">${ico('i-rotate')} Regenerate</button>
+                <button class="btn btn-link btn-xs" onclick="event.stopPropagation();skipOut(${o.id})">Skip</button>`
+              :`<button class="btn btn-mute btn-sm oc-toggle" onclick="event.stopPropagation();toggleOutExpand(${o.id})">View message</button>`}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  applyReveal();
+}
+
+function toggleOutExpand(id){
+  const card=document.querySelector(`.oc[data-id="${id}"]`);
+  if(!card) return;
+  const isExpanded=card.classList.toggle('expanded');
+  const full=card.querySelector('.oc-full');
+  const prev=card.querySelector('.oc-prev');
+  const tog=card.querySelector('.oc-toggle');
+  if(isExpanded){
+    full && full.removeAttribute('hidden');
+    prev && (prev.style.display='none');
+    if(tog) tog.innerHTML=ico('i-x')+' Collapse';
+  } else {
+    full && full.setAttribute('hidden','');
+    prev && (prev.style.display='');
+    if(tog) tog.innerHTML=card.classList.contains('pending')?ico('i-arrow')+' Full preview':'View message';
+  }
+}
+function setView(v,el){vf=v;document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderOutreach();}
+function setCh(c,el){cf=c;document.querySelectorAll('.chf').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderOutreach();}
+function approveOut(id){const o=outreach.find(x=>x.id===id);if(o)o.status='awaiting';renderOutreach();showToast('Sent via '+chMeta[o.ch].label+'.');}
+function skipOut(id){const o=outreach.find(x=>x.id===id);if(o)o.status='skipped';renderOutreach();showToast('Skipped — find under All Messages.');}
+function openOut(id){
+  const o=outreach.find(x=>x.id===id),ch=chMeta[o.ch],ip=o.status==='pending';
+  document.getElementById('modal-title').textContent=`${o.name}`;
+  document.getElementById('modal-body').innerHTML=`
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+      <span class="chan">${ico(ch.icon)} ${ch.label}</span>
+      <span class="cell-mono">${o.contact}</span>
+    </div>
+    <div class="panel-meta" style="margin-bottom:14px">${o.why}</div>
+    ${o.subj?`<div class="panel-subj" style="margin-bottom:14px"><b>Subject</b>${o.subj}</div>`:''}
+    <div class="panel-draft" style="margin-bottom:18px">${o.draft.replace(/\n/g,'<br/>')}</div>
+    ${ip?`<div style="display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px">
+      <button class="btn btn-primary" onclick="approveOut(${id});closeModal()">${ico('i-check')} Approve &amp; send</button>
+      <button class="btn btn-ghost btn-sm" onclick="editDraft('outreach',${id},event)">${ico('i-edit')} Edit</button>
+      <button class="btn btn-ghost btn-sm" onclick="regenerateDraft('outreach',${id},event)">${ico('i-rotate')} Regenerate</button>
+      <button class="btn btn-link btn-sm" onclick="skipOut(${id});closeModal()">Skip</button>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--ink-4);margin-top:14px;text-transform:uppercase;letter-spacing:.12em">Nothing sends until you approve.</div>`
+    :`<div style="font-family:var(--font-mono);font-size:11px;color:var(--pg-fg);text-transform:uppercase;letter-spacing:.14em">${ico('i-check')} Already sent</div>`}
+  `;
+  document.getElementById('modal-bg').classList.add('open');
+}
+
+function renderProspects(){
+  document.getElementById('prospect-grid').innerHTML=prospects.map((p,i)=>{
+    const chs=p.channels.map(c=>`<span class="chip">${ico(chMeta[c].icon)} ${chMeta[c].short}</span>`).join('');
+    const ch=p.channels[0];
+    const typeLow=p.type.split(' ·')[0].toLowerCase();
+    const sampleDraft = ch==='em'
+      ? `Hi ${p.name} team — owner of Vitality Bowls on High Ridge Rd. Healthy catering for ${typeLow}, $12 a person, fully customizable. ${p.val} ballpark depending on size. Could I send our group menu this week?`
+      : ch==='li'
+      ? `Hi — owner of Vitality Bowls in Stamford. We do team lunches and wellness events for ${typeLow}; ${p.val}. Worth a quick intro?`
+      : ch==='ig'
+      ? `Hey ${p.name} — Vitality Bowls minutes away. Bowls + smoothie packages for groups, ${p.val}. Sample tray on us?`
+      : `Hi ${p.name} — Vitality Bowls neighbors on High Ridge Rd. Group catering for ${typeLow}; ${p.val}. Open to a chat?`;
+    return `<div class="pc-card reveal${p.watched?' watched':''}" data-i="${i}" style="--idx:${i}" onclick="if(!event.target.closest('button'))toggleProspectExpand(${i})">
+      <div class="pc-top">
+        <div><div class="pc-name">${p.name}</div><div class="pc-type">${p.type}</div></div>
+        <div><div class="pc-score">${p.score}</div><div class="pc-score-l">Fit score</div></div>
+      </div>
+      <div class="score-bar"><div class="score-fill" style="width:${p.score}%"></div></div>
+      <div class="pc-why">${p.why}</div>
+      <div class="pc-channels">${chs}</div>
+      <div class="pc-val"><span class="lbl">Estimated value</span>${p.val}</div>
+      <div class="pc-detail" hidden>
+        <div class="pc-detail-eyebrow">Sample first-touch · ${chMeta[ch].label}</div>
+        <div class="pc-detail-draft">${sampleDraft}</div>
+      </div>
+      <div class="pc-acts">
+        <button class="btn btn-primary btn-sm" onclick="event.stopPropagation();draftP(${i})">${ico('i-spark')} Draft outreach</button>
+        <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();toggleWatch(${i})">${p.watched?ico('i-check')+' Watching':ico('i-plus')+' Watch'}</button>
+      </div>
+    </div>`;
+  }).join('');
+  applyReveal();
+}
+
+function toggleProspectExpand(i){
+  const card=document.querySelector(`.pc-card[data-i="${i}"]`);
+  if(!card) return;
+  const ex=card.classList.toggle('expanded');
+  const d=card.querySelector('.pc-detail');
+  if(d){ if(ex) d.removeAttribute('hidden'); else d.setAttribute('hidden',''); }
+}
+// Prospect "Draft outreach" → modal popup (review · edit · regen · send)
+let _draftModalCtx=null;
+function _genProspectDraft(p,ch,variant){
+  const typeLow=p.type.split(' ·')[0].toLowerCase();
+  const set = ch==='em' ? [
+    `Hi ${p.name} team,\n\nI'm the owner of Vitality Bowls at 1125 High Ridge Road. We do healthy catering for ${typeLow} — fully customizable, delivered ready to serve.\n\n${p.val} ballpark depending on size. Could I send our group menu this week?\n\nBest,\nVitality Bowls Stamford`,
+    `Hi ${p.name} team,\n\nNeighbor on High Ridge Rd — Vitality Bowls. Healthy team lunches at $12 a head, ${p.val} range. Could I send a one-pager?\n\nBest,\nVitality Bowls Stamford`,
+    `Hi there,\n\nFollowing up — Vitality Bowls is your closest healthy catering option. ${p.val} typical for ${typeLow}. Sample tray free this week.\n\n— Vitality Bowls Stamford`
+  ] : ch==='li' ? [
+    `Hi — owner of Vitality Bowls in Stamford, on High Ridge Rd. We cater team lunches and wellness events for ${typeLow}. Group pricing in the ${p.val} range.\n\nWould love to connect if you're exploring local options.`,
+    `Hi — Vitality Bowls in Stamford, two minutes from your team. Recurring corporate lunches; ${p.val}. Worth a 15-minute call?`,
+    `Hi — local catering note. Vitality Bowls on High Ridge. ${p.val} for ${typeLow}. Quick intro?`
+  ] : ch==='ig' ? [
+    `Hey ${p.name} — Vitality Bowls on High Ridge Road, minutes from you. Healthy bowls and smoothie packages for groups. Happy to drop samples. Interested?`,
+    `Hey ${p.name} — neighbors at Vitality Bowls. Recovery bowls + smoothie packages for your community. Free sample tray any week. Want to try?`,
+    `Hey ${p.name} — Vitality Bowls. Built for ${typeLow}. ${p.val}. Sample tray on us.`
+  ] : [
+    `Hi ${p.name} — Vitality Bowls neighbors on High Ridge Rd. Group catering for ${typeLow}; ${p.val}. Open to a chat?`,
+    `Hi neighbors — Vitality Bowls now catering ${typeLow}. ${p.val} range. Drop a message for the menu.`,
+    `Hi ${p.name} — Vitality Bowls. Catering for ${typeLow}; ${p.val}. Sample if useful.`
+  ];
+  return { variants:set, body:set[variant%set.length] };
+}
+function draftP(i){
+  const p=prospects[i];
+  const ch=p.channels[0];
+  const subj=ch==='em'?`Healthy team catering — Vitality Bowls Stamford`:null;
+  const gen=_genProspectDraft(p,ch,0);
+  _draftModalCtx={i,p,ch,subj,variant:0,body:gen.body,total:gen.variants.length};
+  _renderProspectDraftModal();
+  document.getElementById('modal-bg').classList.add('open');
+}
+function _renderProspectDraftModal(){
+  const c=_draftModalCtx; if(!c) return;
+  document.getElementById('modal-title').textContent=`Drafted · ${c.p.name}`;
+  document.getElementById('modal-body').innerHTML=`
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+      <span class="chan">${ico(chMeta[c.ch].icon)} ${chMeta[c.ch].label}</span>
+      <span class="cell-mono">${c.p.type}</span>
+    </div>
+    <div class="panel-meta" style="margin-bottom:14px">${ico('i-spark')} Sample first-touch · drafted from fit score ${c.p.score} · estimated ${c.p.val}</div>
+    ${c.subj?`<div class="panel-subj" style="margin-bottom:14px"><b>Subject</b>${c.subj}</div>`:''}
+    <div class="panel-draft" style="margin-bottom:18px">${c.body.replace(/\n/g,'<br/>')}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px">
+      <button class="btn btn-primary" onclick="sendProspectDraft()">${ico('i-check')} Send to outreach queue</button>
+      <button class="btn btn-ghost btn-sm" onclick="editProspectDraft()">${ico('i-edit')} Edit</button>
+      <button class="btn btn-ghost btn-sm" onclick="regenProspectDraft()">${ico('i-rotate')} Regenerate</button>
+      <button class="btn btn-link btn-sm" onclick="closeModal()">Cancel</button>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--ink-4);margin-top:14px;text-transform:uppercase;letter-spacing:.12em">Nothing sends until you approve.</div>
+  `;
+}
+function editProspectDraft(){
+  const el=document.querySelector('#modal-bg .panel-draft');
+  if(!el) return;
+  el.contentEditable='true';
+  el.style.outline='1.5px dashed var(--brand-purple)';
+  el.style.outlineOffset='8px';
+  el.focus();
+  const r=document.createRange();r.selectNodeContents(el);r.collapse(false);
+  const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  showToast('Editing — click out or press Esc to save');
+  el.addEventListener('blur',function done(){
+    el.contentEditable='false';el.style.outline='';el.style.outlineOffset='';
+    if(_draftModalCtx) _draftModalCtx.body=el.innerText;
+    showToast('Saved.');
+  },{once:true});
+  el.addEventListener('keydown',function ks(e){if(e.key==='Escape'){e.preventDefault();el.blur();el.removeEventListener('keydown',ks);}});
+}
+function regenProspectDraft(){
+  const c=_draftModalCtx; if(!c) return;
+  c.variant=(c.variant+1)%c.total;
+  c.body=_genProspectDraft(c.p,c.ch,c.variant).body;
+  _renderProspectDraftModal();
+  showToast(`Regenerated — variant ${c.variant+1} of ${c.total}`);
+}
+function sendProspectDraft(){
+  const c=_draftModalCtx; if(!c) return;
+  const newId=300+outreach.length;
+  outreach.unshift({
+    id:newId,ch:c.ch,name:c.p.name,
+    contact:c.ch==='em'?`events@${c.p.name.toLowerCase().replace(/[^a-z0-9]+/g,'')}.com`
+            :c.ch==='li'?'Decision-maker — LinkedIn'
+            :c.ch==='ig'?`@${c.p.name.toLowerCase().replace(/[^a-z0-9]+/g,'')}`
+            :c.p.type,
+    status:'pending',
+    subj:c.subj,
+    draft:c.body,
+    why:c.p.why+' · drafted from fit score '+c.p.score
+  });
+  closeModal();
+  // quietly update outreach list (no scroll, no tab switch)
+  vf='pending';cf='all';
+  const fb=document.querySelectorAll('.filt'); fb.forEach((b,idx)=>b.classList.toggle('active',idx===0));
+  const cb=document.querySelectorAll('.chf'); cb.forEach((b,idx)=>b.classList.toggle('active',idx===0));
+  renderOutreach();
+  showToast(`Added to outreach queue · ${c.p.name}`);
+}
+
+function renderPosts(){
+  document.getElementById('post-list').innerHTML=posts.map((p,i)=>{
+    const ip=p.status==='pending';
+    return `<div class="post-card reveal" style="--idx:${i}">
+      <div class="post-visual ${p.bg}">
+        <div class="post-eyebrow">${p.sub}</div>
+        <div class="post-headline">${p.headline}</div>
+      </div>
+      <div class="post-body">
+        <div class="post-segment"><span class="tag ${p.segTag}">${p.segment}</span></div>
+        <div class="post-caption">${p.caption}</div>
+        <div class="post-hashtags">${p.hashtags}</div>
+        <div class="post-foot">
+          ${ip?`<button class="btn btn-primary btn-sm" onclick="approvePost(${i})">${ico('i-check')} Approve &amp; post</button>`:`<span class="tag tag-g">Posted</span>`}
+          <button class="btn btn-ghost btn-sm" onclick="editDraft('post',${i},event)">${ico('i-edit')} Edit</button>
+          ${p.boost?`<div class="boost">${ico('i-bolt')} Boost ${p.boostAmt}</div>`:''}
+        </div>
+        ${p.boost&&ip?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--ink-3);margin-top:10px;letter-spacing:.02em">Boost target: ${p.boostAud}</div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+  applyReveal();
+}
+function approvePost(i){posts[i].status='posted';renderPosts();showToast('Post approved — scheduled for today.');}
+
+function renderAds(){
+  document.getElementById('ad-list').innerHTML=ads.filter(a=>a.status!=='skipped').map((ad,i)=>{
+    const p=platMeta[ad.platform],ip=ad.status==='pending';
+    return `<div class="ad-card reveal" data-id="${ad.id}" style="--idx:${i}">
+      <div class="ad-plat">${ico(p.icon)} ${p.label} ${ip?'<span class="tag tag-o">Pending</span>':'<span class="tag tag-g">Active</span>'}</div>
+      <div class="ad-headline">${ad.headline}</div>
+      <div class="ad-copy">${ad.copy}</div>
+      <div class="ad-aud"><span class="lbl">Audience</span>${ad.audience}</div>
+      <div class="ad-why">${ad.why}</div>
+      <div class="ad-budget">
+        <div><div class="lbl">Weekly spend · est. results</div><div class="est">${ad.reach} · ${ad.clicks}</div></div>
+        <div class="val">$${ad.budget}</div>
+      </div>
+      <div class="oc-acts">
+        ${ip
+          ?`<button class="btn btn-primary btn-sm" onclick="approveAd('${ad.id}')">${ico('i-check')} Approve &amp; launch</button>
+             <button class="btn btn-ghost btn-sm" onclick="editDraft('ad','${ad.id}',event)">${ico('i-edit')} Edit</button>
+             <button class="btn btn-link btn-xs" onclick="skipAd('${ad.id}')">Skip</button>`
+          :`<div style="font-family:var(--font-mono);font-size:11px;color:var(--pg-fg);text-transform:uppercase;letter-spacing:.14em">${ico('i-check')} Live — tracking results</div>`}
+      </div>
+    </div>`;
+  }).join('');
+  applyReveal();
+}
+function approveAd(id){ads.find(a=>a.id===id).status='active';renderAds();showToast('Ad launched in Stamford.');}
+function skipAd(id){ads.find(a=>a.id===id).status='skipped';renderAds();showToast('Skipped.');}
+function updateBudget(v){
+  document.getElementById('bval').textContent='$'+v;
+  const k=Math.round(v/25)*25;
+  document.getElementById('best').innerHTML=bmap[k]||bmap[100];
+}
+
+function openModal(){
+  document.getElementById('modal-title').textContent='New inquiry detected';
+  document.getElementById('modal-body').innerHTML=`
+    <div class="inq-flash">
+      <div class="if-h">Instagram DM · @soulcyclehighridge · just now</div>
+      <div class="if-from">From: SoulCycle High Ridge</div>
+      <div class="if-msg">"Hey — we have about 20 riders doing a special class next Friday and want to do a post-ride healthy lunch. Do you guys do catering? What would that cost?"</div>
+    </div>
+    <div class="panel-meta" style="margin-bottom:14px">AI drafted a reply in 4 seconds. Review before sending.</div>
+    <div class="panel-draft" style="margin-bottom:18px">${inquiryVariants[inqVariantIdx].replace(/\n/g,'<br/>')}</div>
+    <div class="seq" style="margin-bottom:18px">
+      <div class="seq-eyebrow">Follow-up sequence — auto-scheduled on approval</div>
+      <div class="seq-row">${seqLbls.map((s,i)=>`<div class="seq-step ${i===0?'active':'upcoming'}"><div class="seq-dot">${i+1}</div><div class="seq-txt">${s}</div></div>`).join('')}</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px">
+      <button class="btn btn-primary" onclick="approveInquiry()">${ico('i-check')} Approve &amp; send</button>
+      <button class="btn btn-ghost btn-sm" onclick="editDraft('inquiry',0,event)">${ico('i-edit')} Edit</button>
+      <button class="btn btn-ghost btn-sm" onclick="regenerateDraft('inquiry',0,event)">${ico('i-rotate')} Regenerate</button>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--ink-4);margin-top:14px;text-transform:uppercase;letter-spacing:.12em">~45 sec of your time · nothing sends without you</div>
+  `;
+  document.getElementById('modal-bg').classList.add('open');
+}
+function closeMBg(e){if(e.target===document.getElementById('modal-bg'))closeModal();}
+function closeModal(){
+  document.getElementById('modal-bg').classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+// Wrap any place that adds .open to also lock body scroll
+const _origOpen = document.getElementById('modal-bg');
+const _mb_observer = new MutationObserver(()=>{
+  if(_origOpen.classList.contains('open')) document.body.classList.add('modal-open');
+  else document.body.classList.remove('modal-open');
+});
+_mb_observer.observe(_origOpen,{attributes:true,attributeFilter:['class']});
+
+function switchTab(tab,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('visible'));
+  document.getElementById('tab-'+tab).classList.add('visible');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  closeLeadPanel();
+  applyReveal();
+  // Only nudge scroll if the section header is well off-screen — no aggressive jump-to-top
+  const head=document.querySelector('#tab-'+tab+' .sec-head, #tab-'+tab+' .p2-hero');
+  if(head){
+    const r=head.getBoundingClientRect();
+    if(r.top<60 || r.top>window.innerHeight*0.6){
+      head.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// IntersectionObserver scroll-entry per spec
+let _io=null;
+function applyReveal(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));return;
+  }
+  if(!_io){
+    _io=new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){en.target.classList.add('in');_io.unobserve(en.target);}
+      });
+    },{threshold:0.06});
+  }
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>_io.observe(el));
+}
+
+// === DEMO INTERACTIONS ===
+// Pre-written variants for "Regenerate"
+const draftVariantsLead={
+  1:[
+    drafts[1],
+    `Hi Sarah —\n\nOwner of Vitality Bowls here, just up the road on High Ridge. We do healthy team lunches at $12 a head — customizable bowls and smoothie boxes, delivered ready to serve.\n\nFor 35 people that's about $840. Happy to send our group menu today if useful.\n\nBest,\nVitality Bowls Stamford`,
+    `Hi Sarah,\n\nFollowing up — Vitality Bowls is your closest healthy catering option for UBS Stamford. $12 per person, fully customizable, delivered.\n\n35 people works out to roughly $840. Could I send a one-page menu and book a sample drop?\n\nBest,\nVitality Bowls Stamford`
+  ],
+  2:[
+    drafts[2],
+    `Hey SoulCycle High Ridge — we're up the road at Vitality Bowls. For 18 riders, our Post-Workout Recovery package (açaí + pitaya bases, protein toppings) runs about $360 for the group.\n\nWant us to drop a sample tray for the instructors first?`,
+    `Hi SoulCycle High Ridge — Vitality Bowls on High Ridge Rd. Recovery bowls built for fitness studios: 18 riders is around $360 for the group, customizable to allergens. Free instructor tasting any week. Interested?`
+  ],
+  3:[
+    drafts[3],
+    `Hi Dr. Patel,\n\nVitality Bowls here — healthy, allergen-friendly catering for medical teams. 45 people for a staff appreciation event runs approximately $1,200 delivered.\n\nWant me to send a one-pager you can share with the office manager?\n\nBest,\nVitality Bowls Stamford`,
+    `Hi Dr. Patel,\n\nFollowing up about catering for Stamford Health Medical. We focus on health-aligned, allergen-tracked group menus for medical teams. 45 people is around $1,200 delivered, ready to serve.\n\nHappy to drop samples for the team this week.\n\nBest,\nVitality Bowls Stamford`
+  ],
+  4:[
+    drafts[4],
+    `Hi Jamie,\n\nVitality Bowls on High Ridge — healthy catering for WWE Stamford HQ. Team Lunch Package for 60 is about $1,440, customizable across diets, with recurring weekly arrangements available at a discount.\n\nWorth a 15-minute call?\n\nBest,\nVitality Bowls Stamford`,
+    `Hi Jamie,\n\nLocal catering proposal for the WWE team — Vitality Bowls is two minutes away on High Ridge. 60 people, customizable bowls and smoothie boxes, $1,440 delivered. We can lock in recurring weekly slots if useful.\n\nGood time for a quick call?\n\nBest,\nVitality Bowls Stamford`
+  ]
+};
+const draftVariantsOutreach={
+  10:[null,`Hey CrossFit 203 — Vitality Bowls is up the road on High Ridge. Built for athletes: açaí, pitaya, protein toppings. Free coach tasting any week — interested?`,`CrossFit 203 — your closest healthy fuel partner is Vitality Bowls on High Ridge Rd. Recovery bowls and protein smoothie packages. Want me to send a sample tray for the team?`],
+  11:[null,`Hi UBS Stamford,\n\nNeighborly note: Vitality Bowls at 1125 High Ridge Rd. We cater team lunches at $12 a head with recurring discounts. Could I send a one-page menu?\n\n— Vitality Bowls Stamford`,`Hi UBS Events team,\n\nFollowing up — Vitality Bowls is your closest healthy lunch partner on High Ridge Rd. $12/person, fully customizable, delivered. 200+ employees means recurring discount tier applies.\n\nMenu PDF on request.\n\n— Vitality Bowls Stamford`],
+  12:[null,`Hi [Name],\n\nQuick note from the owner of Vitality Bowls — we're WWE's neighbors on High Ridge. Healthy catering for team lunches and wellness events, recurring weekly slots available.\n\n15-minute intro call?\n\n— Vitality Bowls Stamford`,`Hi [Name] —\n\nVitality Bowls on High Ridge, two minutes from WWE HQ. We do recurring corporate lunches for Stamford teams; happy to put together a wellness-program proposal.\n\nBest day for a call?`],
+  13:[null,`Hey High Ridge Road neighbors — Vitality Bowls just launched group catering. Office lunches, team events, youth sports. Locally made, fresh daily.\n\nGroup pricing on request.`,`Stamford neighbors — owner of Vitality Bowls here. We're now catering office lunches and youth sports events along High Ridge Rd. Drop a message and we'll send the group menu.`],
+  14:[null,`Hi Stamford Health Medical,\n\nHealthy, allergen-friendly catering for medical teams from your neighbor on High Ridge Rd. Group menus, recurring lunches, sample drops on request.\n\n— Vitality Bowls Stamford`,`Hi there,\n\nVitality Bowls here — health-aligned catering for medical offices. Allergen-tracked menu, $12 a person. Could I send a sample to the office manager?\n\n— Vitality Bowls Stamford`]
+};
+let inqVariantIdx=0;
+const inquiryVariants=[
+  `Hey SoulCycle High Ridge —\n\nYes, we'd love to fuel your riders after class.\n\nFor 20 people, our Post-Workout Recovery Bowl Package is well-suited: açaí and pitaya bases, protein toppings, fully customizable. We're up the road on High Ridge — about $380 for the group.\n\nWhat time works next Friday? Happy to lock this in today.\n\n— Vitality Bowls Stamford`,
+  `Hi SoulCycle High Ridge — owner of Vitality Bowls on High Ridge Rd. 20-rider Post-Workout package: açaí + pitaya bases, protein toppings, customizable, around $380 delivered.\n\nWhat time works Friday? I can lock the slot today.\n\n— Vitality Bowls Stamford`,
+  `Hi SoulCycle High Ridge,\n\nNeighbors on High Ridge. For 20 riders, Recovery Bowl Package is $380 for the group, fully customizable to dietary needs. Sample tray free if you want one this week.\n\nFriday time?\n\n— Vitality Bowls Stamford`
+];
+
+function editDraft(type,id,evt){
+  if(evt) evt.stopPropagation();
+  let el=null,save=null;
+  if(type==='lead'){
+    el=document.querySelector(`#pipeline-body tr.panel-row[data-lead="${id}"] .panel-draft`);
+    save=()=>{ drafts[id]=el.innerText; };
+  } else if(type==='outreach'){
+    const card=document.querySelector(`.oc[data-id="${id}"]`);
+    if(card && !card.classList.contains('expanded')) toggleOutExpand(id);
+    el=card && card.querySelector('.oc-full .panel-draft');
+    save=()=>{ const o=outreach.find(x=>x.id===id); if(o) o.draft=el.innerText; };
+  } else if(type==='post'){
+    el=document.querySelectorAll('#post-list .post-caption')[id];
+    save=()=>{ posts[id].caption=el.innerText; };
+  } else if(type==='ad'){
+    const card=document.querySelector(`#ad-list .ad-card[data-id="${id}"]`);
+    el=card&&card.querySelector('.ad-copy');
+    save=()=>{ const a=ads.find(x=>x.id===id); if(a) a.copy=el.innerText; };
+  } else if(type==='inquiry'){
+    el=document.querySelector('#modal-bg .panel-draft');
+    save=()=>{ inquiryVariants[inqVariantIdx]=el.innerText; };
+  }
+  if(!el){showToast('Nothing to edit here.');return;}
+  el.contentEditable='true';
+  el.style.outline='1.5px dashed var(--brand-purple)';
+  el.style.outlineOffset='8px';
+  el.style.borderRadius='4px';
+  el.style.cursor='text';
+  el.focus();
+  // place caret at end
+  const r=document.createRange();r.selectNodeContents(el);r.collapse(false);
+  const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  showToast('Editing — click out or press Esc to save');
+  function done(){
+    el.contentEditable='false';
+    el.style.outline='';el.style.outlineOffset='';el.style.cursor='';
+    if(save) save();
+    showToast('Saved.');
+    el.removeEventListener('blur',done);
+    el.removeEventListener('keydown',ks);
+  }
+  function ks(e){if(e.key==='Escape'){e.preventDefault();el.blur();}}
+  el.addEventListener('blur',done,{once:true});
+  el.addEventListener('keydown',ks);
+}
+
+function regenerateDraft(type,id,evt){
+  if(evt) evt.stopPropagation();
+  if(type==='lead'){
+    const v=draftVariantsLead[id];
+    if(!v||v.length<2){showToast('No alternate variants for this draft.');return;}
+    let cur=v.indexOf(drafts[id]); if(cur<0) cur=0;
+    const nxt=(cur+1)%v.length;
+    drafts[id]=v[nxt];
+    selectLead(id);
+    showToast(`Regenerated — variant ${nxt+1} of ${v.length}`);
+  } else if(type==='outreach'){
+    const v=draftVariantsOutreach[id];
+    const o=outreach.find(x=>x.id===id);
+    if(!v||v.length<2||!o){showToast('No alternate variants for this draft.');return;}
+    if(v[0]===null) v[0]=o.draft;
+    let cur=v.indexOf(o.draft); if(cur<0) cur=0;
+    const nxt=(cur+1)%v.length;
+    o.draft=v[nxt];
+    renderOutreach();
+    // re-expand the card we just regenerated, in place
+    setTimeout(()=>{
+      const card=document.querySelector(`.oc[data-id="${id}"]`);
+      if(card && !card.classList.contains('expanded')) toggleOutExpand(id);
+      applyReveal();
+    },40);
+    showToast(`Regenerated — variant ${nxt+1} of ${v.length}`);
+  } else if(type==='inquiry'){
+    inqVariantIdx=(inqVariantIdx+1)%inquiryVariants.length;
+    const el=document.querySelector('#modal-bg .panel-draft');
+    if(el) el.innerHTML=inquiryVariants[inqVariantIdx].replace(/\n/g,'<br/>');
+    showToast(`Regenerated — variant ${inqVariantIdx+1} of ${inquiryVariants.length}`);
+  }
+}
+
+function toggleWatch(i){
+  prospects[i].watched=!prospects[i].watched;
+  renderProspects();
+  showToast(prospects[i].watched?'Added to watchlist':'Removed from watchlist');
+}
+
+function refreshProspects(){
+  const grid=document.getElementById('prospect-grid');
+  grid.style.transition='opacity .25s var(--ease), transform .25s var(--ease)';
+  grid.style.opacity='0';grid.style.transform='translateY(8px)';
+  showToast('Scanning Stamford trade area...');
+  setTimeout(()=>{
+    // gentle reshuffle: move top score to a random middle slot, jitter scores ±2
+    for(let i=prospects.length-1;i>0;i--){
+      if(Math.random()<.5){
+        const j=Math.floor(Math.random()*(i+1));
+        [prospects[i],prospects[j]]=[prospects[j],prospects[i]];
+      }
+    }
+    prospects.forEach(p=>{
+      p.score=Math.max(70,Math.min(99,p.score+(Math.floor(Math.random()*5)-2)));
+    });
+    // resort by score so the highest-fit always surfaces first
+    prospects.sort((a,b)=>b.score-a.score);
+    renderProspects();
+    grid.style.opacity='1';grid.style.transform='none';
+    showToast(`Scored ${prospects.length} prospects · refreshed just now`);
+  },720);
+}
+
+function approveInquiry(){
+  const newId=leads.length+1;
+  leads.push({
+    id:newId,name:'SoulCycle High Ridge',org:'Post-Ride Recovery — 20 riders',
+    av:'SC',ch:'ig',size:20,value:380,status:'awaiting',item:'Post-Workout Recovery Bowls'
+  });
+  drafts[newId]=inquiryVariants[inqVariantIdx];
+  seqCfg.push([{s:'done'},{s:'active'},{s:'upcoming'},{s:'upcoming'}]);
+  renderPipeline();
+  closeModal();
+  showToast('Sent · new lead added to pipeline');
+  // Flash the new row in place — no page scroll
+  setTimeout(()=>{
+    const rows=document.querySelectorAll('#pipeline-body tr[data-lead]');
+    const last=rows[rows.length-1];
+    if(last){
+      last.style.transition='background .4s var(--ease)';
+      last.style.background='var(--brand-green-soft)';
+      setTimeout(()=>last.style.background='',1800);
+    }
+  },200);
+}
+
+function approveAllPending(){
+  let n=0;
+  posts.forEach(p=>{ if(p.status==='pending'){p.status='posted';n++;} });
+  ads.forEach(a=>{ if(a.status==='pending'){a.status='active';n++;} });
+  renderPosts();renderAds();
+  showToast(`Approved ${n} item${n===1?'':'s'} · all live now`);
+}
+
+renderPipeline();renderOutreach();renderProspects();renderPosts();renderAds();
+applyReveal();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
