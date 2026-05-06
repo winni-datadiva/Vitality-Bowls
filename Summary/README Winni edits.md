@@ -14,7 +14,7 @@ Vitality Bowls Stamford is a first-year franchise. As such, they have a limited 
 
 ## The Problem
 
-Vitality Bowls Stamford has been open for 8 months. They're located at 1125 High Ridge Road — a high-opportunity wellness corridor surrounded by corporate offices, medical buildings, gyms, and thousands of potential catering customers.
+Vitality Bowls Stamford has been open for 8 months. They're located at 1125 High Ridge Road Stamford,CT — a high-opportunity wellness corridor surrounded by corporate offices, medical buildings, gyms, and thousands of potential catering customers.
 
 But none of that opportunity is being captured.
 
@@ -91,7 +91,7 @@ The engine uses natural language generation to draft personalized outreach acros
 
 ## How to Run the Demo
 
-Download `vitality_bowls_v6.html` from the `/Code` folder and open it in any browser. No internet required, no login, nothing to install.
+Download `vitality_bowls_v6_minimalist.html` from the `/Code` folder and open it in any browser. No internet required, no login, nothing to install.
 
 Start on the Pipeline tab and hit **Simulate New Inquiry** — that's the moment that shows everything. An Instagram DM comes in, AI drafts a response in four seconds, the owner reviews it and approves. The follow-up sequence schedules itself. That's the whole system in 45 seconds.
 
