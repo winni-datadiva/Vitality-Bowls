@@ -8,8 +8,6 @@
 ---
 # **Table of Contents**
 
-- [Vitality Bowls Stamford — AI Growth Engine](#vitality-bowls-stamford--ai-growth-engine)
-    - [*TKH AI for Impact: Small Business Challenge · Group 2*](#tkh-ai-for-impact-small-business-challenge--group-2)
 - [**Table of Contents**](#table-of-contents)
   - [The Opportunity](#the-opportunity)
   - [The Approach](#the-approach)
@@ -138,8 +136,6 @@ A built-in budget slider provides estimated reach and engagement.
 
 Everything is ready to go — pending approval.
 
-Any visualizations, mockups, inluding but not limited to html code for dashboard demo was created using Claude.ai
-
 ---
 
 ### Phase 2 Roadmap — Building the Full System
@@ -203,6 +199,8 @@ This system is designed to support that growth while keeping time demands low.
 - Content Generation → weekly posts tailored to key audiences  
 - Automated Follow-Up → structured outreach sequences triggered on approval  
 - Ad Generation → campaign creation with targeting and budget guidance  
+
+*Any visualizations, mockups, inluding but not limited to html code for dashboard demo was created using Claude.ai*
 
 ---
 
