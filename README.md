@@ -211,7 +211,7 @@ If the file doesn’t load correctly:
 
 ## Built By
 
-**Group 2 — TKH Data Science Technology Fellowshi at Synchrony Skills Academy**  
+**Group 2 — TKH Data Science Technology Fellowship at Synchrony Skills Academy**  
 AI for Impact: Small Business Challenge · May 2026  
 
 **Winni · Deborah · Nick · Aminatu · Noah · Dre**
