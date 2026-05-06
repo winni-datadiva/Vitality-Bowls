@@ -161,10 +161,9 @@ Over time, these components connect into a unified system where outreach, conver
 ### Additional Recommendations — Vitality Bowls Stamford Instagram
 
 <p align="center">
-  <img src="Images/vitality_bowls mock up 1.png"width="300">
-</p>
-<p align="left center">
-  <img src="Images/vitality_bowls_mockup 2.png"width="300">
+  <img src="Images/vitality_bowls mock up 1.png" width="45%">
+  &nbsp;&nbsp;
+  <img src="Images/vitality_bowls_mockup 2.png" width="45%">
 </p>
 
 Beyond the AI dashboard, we created a mockup of simple, high-impact changes to the Vitality Bowls Stamford Instagram account — drawn from examples across other franchises — that can be implemented immediately.
