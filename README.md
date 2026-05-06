@@ -4,7 +4,24 @@
 <p align="center">
 <img src="https://franchise.vitalitybowls.com/wp-content/uploads/2026/05/cropped-Vitality2Color_MedallionLogo.png" width="150" text="Vitality Bowls logo with tagline Superfood Cafe">
 </p>
+
 ---
+- [Vitality Bowls Stamford — AI Growth Engine](#vitality-bowls-stamford--ai-growth-engine)
+    - [*TKH AI for Impact: Small Business Challenge · Group 2*](#tkh-ai-for-impact-small-business-challenge--group-2)
+  - [The Opportunity](#the-opportunity)
+  - [The Approach](#the-approach)
+  - [The System](#the-system)
+    - [Pipeline — Turning Interest into Orders](#pipeline--turning-interest-into-orders)
+    - [Outreach \& Approvals — Simple Weekly Workflow](#outreach--approvals--simple-weekly-workflow)
+    - [Prospect Finder — Identifying High-Value Customers](#prospect-finder--identifying-high-value-customers)
+    - [Ad \& Content Studio — Consistent, On-Brand Content](#ad--content-studio--consistent-on-brand-content)
+    - [Phase 2 Roadmap — Building the Full System](#phase-2-roadmap--building-the-full-system)
+  - [The Impact](#the-impact)
+  - [AI Components](#ai-components)
+  - [How to Run the Demo](#how-to-run-the-demo)
+  - [If the File Doesn’t Open](#if-the-file-doesnt-open)
+  - [Built By](#built-by)
+
 
 ## The Opportunity
 
