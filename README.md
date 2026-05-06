@@ -8,22 +8,19 @@
 ---
 # **Table of Contents**
 
-- [Vitality Bowls Stamford — AI Growth Engine](#vitality-bowls-stamford--ai-growth-engine)
-    - [*TKH AI for Impact: Small Business Challenge · Group 2*](#tkh-ai-for-impact-small-business-challenge--group-2)
-- [**Table of Contents**](#table-of-contents)
-  - [The Opportunity](#the-opportunity)
-  - [The Approach](#the-approach)
-  - [The System](#the-system)
+- [The Opportunity](#the-opportunity)
+- [The Approach](#the-approach)
+- [The System](#the-system)
     - [Pipeline — Turning Interest into Orders](#pipeline--turning-interest-into-orders)
     - [Outreach \& Approvals — Simple Weekly Workflow](#outreach--approvals--simple-weekly-workflow)
     - [Prospect Finder — Identifying High-Value Customers](#prospect-finder--identifying-high-value-customers)
     - [Ad \& Content Studio — Consistent, On-Brand Content](#ad--content-studio--consistent-on-brand-content)
     - [Phase 2 Roadmap — Building the Full System](#phase-2-roadmap--building-the-full-system)
-  - [The Impact](#the-impact)
-  - [AI Components](#ai-components)
-  - [How to Run the Demo](#how-to-run-the-demo)
-  - [If the File Doesn’t Open](#if-the-file-doesnt-open)
-  - [Built By](#built-by)
+- [The Impact](#the-impact)
+- [AI Components](#ai-components)
+- [How to Run the Demo](#how-to-run-the-demo)
+- [If the File Doesn’t Open](#if-the-file-doesnt-open)
+- [Built By](#built-by)
 
 ---
 
@@ -50,7 +47,7 @@ This highlighted a clear opportunity:
 We built a lightweight AI growth engine designed to support a busy owner.
 
 <p align="center>
-![AI growth engine dashboard](Images/AI_dashboard.png)
+    ![AI growth engine dashboard](Images/AI_dashboard.png)
 </p>
 
 No marketing team required.  
@@ -72,7 +69,7 @@ The entire experience lives in a single HTML file that opens instantly in any br
 ### Pipeline — Turning Interest into Orders
 
 <p align="center>
-![Pipeline]](Images/1_pipeline.png)
+    ![Pipeline]](Images/1_pipeline.png)
 </p>
 
 Every catering inquiry is captured and organized in one place.
@@ -89,7 +86,7 @@ This creates consistency — every lead is handled, every time.
 ### Outreach & Approvals — Simple Weekly Workflow
 
 <p align="center>
-![Outreach](Images/2_outreach.png)
+    ![Outreach](Images/2_outreach.png)
 </p>
 
 Outreach across five channels — Instagram, Email, LinkedIn, Google Maps, and Nextdoor — flows into one approval queue.
@@ -108,7 +105,7 @@ The owner can approve, edit, or  it in seconds.
 ### Prospect Finder — Identifying High-Value Customers
 
 <p align="center">
-![Prospects](Vitality-Bowls/Images/3_prospects.png)
+    ![Prospects](Vitality-Bowls/Images/3_prospects.png)
 </p>
 
 The system scans nearby businesses and highlights strong catering opportunities.
@@ -126,7 +123,7 @@ Outreach can be drafted instantly and sent to the approval queue.
 ### Ad & Content Studio — Consistent, On-Brand Content
 
 <p align="center">
-![Ad & Content Studio](Vitality-Bowls/Images/4_content_studio.png)
+    ![Ad & Content Studio](Vitality-Bowls/Images/4_content_studio.png)
 </p>
 
 Each week, the system generates:
@@ -143,7 +140,7 @@ Everything is ready to go — pending approval.
 ### Phase 2 Roadmap — Building the Full System
 
 <p align="center">
-![Roadmap](Vitality-Bowls/Images/5_roadmap.png)
+    ![Roadmap](Vitality-Bowls/Images/5_roadmap.png)
 </p>
 
 Phase 2 begins with strengthening the digital foundation — including a dedicated catering page, conversion tracking, and a centralized way to capture customer data across channels.
