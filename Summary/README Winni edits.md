@@ -1,6 +1,8 @@
 # **Vitality Bowls — AI Growth Engine**
 ### TKH AI for Impact: Small Business Challenge · Group 2
 
+![Vitality Bowls logo with tagline Superfood Cafe](https://franchise.vitalitybowls.com/wp-content/uploads/2026/05/cropped-Vitality2Color_MedallionLogo.png)
+
 ---
 
 ## Background
