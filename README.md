@@ -137,7 +137,7 @@ Each week, the system generates:
 A built-in budget slider provides estimated reach and engagement.
 
 Everything is ready to go — pending approval.
-** Any visualizations, mockups, inluding but not limited to html code for dashboard demo was created using Claude.ai
+**Any visualizations, mockups, inluding but not limited to html code for dashboard demo was created using Claude.ai
 
 ---
 
