@@ -1,6 +1,9 @@
-# Vitality Bowls — AI Growth Engine  
+# Vitality Bowls Stamford — AI Growth Engine  
 ### *TKH AI for Impact: Small Business Challenge · Group 2*
 
+<p align="center">
+<img src="https://franchise.vitalitybowls.com/wp-content/uploads/2026/05/cropped-Vitality2Color_MedallionLogo.png" width="150" text="Vitality Bowls logo with tagline Superfood Cafe">
+</p>
 ---
 
 ## The Opportunity
@@ -63,7 +66,7 @@ Each item shows:
 - Why they were selected  
 - What will be sent  
 
-The owner can approve, edit, or skip in seconds.
+The owner can approve, edit, or  it in seconds.
 
 **Estimated time to review everything: ~8 minutes per week.**
 
@@ -155,7 +158,7 @@ You’ll see:
 If the file doesn’t load correctly:
 
 - Try opening it in **Google Chrome**  
-- Ensure the file is fully downloaded (not previewed)  
+- Ensure the raw file is fully downloaded (not previewed)  
 - Right-click → “Open With” → select your browser  
 - If needed, re-download the file from the repository  
 
@@ -163,7 +166,7 @@ If the file doesn’t load correctly:
 
 ## Built By
 
-**Group 2 — TKH Synchrony Technology Fellowship**  
+**Group 2 — TKH Data Science Technology Fellowshi at Synchrony Skills Academy**  
 AI for Impact: Small Business Challenge · May 2026  
 
 **Winni · Deborah · Nick · Aminatu · Noah · Dre**
