@@ -2,7 +2,7 @@
 ### *TKH AI for Impact: Small Business Challenge · Group 2*
 
 <p align="center">
-<img src="https://franchise.vitalitybowls.com/wp-content/uploads/2026/05/cropped-Vitality2Color_MedallionLogo.png" width="150" text="Vitality Bowls logo with tagline Superfood Cafe">
+<img src="https://franchise.vitalitybowls.com/wp-content/uploads/2026/05/cropped-Vitality2Color_MedallionLogo.png" width="150" alt="Vitality Bowls two color medallion logo with the words Vitality Bowls and Superfood Cafe">
 </p>
 
 ---
@@ -50,7 +50,7 @@ This highlighted a clear opportunity:
 We built a lightweight AI growth engine designed to support a busy owner.
 
 <p align="center">
-    <img src="./Images/AI_dashboard.png" alt="Dashboard">
+    <img src="./Images/AI_dashboard.png" alt="Browser dashboard showing catering lead tracking cards and an approval workflow summary">
 </p>
 
 No marketing team required.  
@@ -72,7 +72,7 @@ The entire experience lives in a single HTML file that opens instantly in any br
 ### Pipeline — Turning Interest into Orders
 
 <p align="center">
-    <img src="./Images/1_pipeline.png" alt="Pipeline">
+    <img src="./Images/1_pipeline.png" alt="Pipeline graphic showing catering inquiry stages from new lead to drafted response review and follow up">
 </p>
 
 Every catering inquiry is captured and organized in one place.
@@ -89,7 +89,7 @@ This creates consistency — every lead is handled, every time.
 ### Outreach & Approvals — Simple Weekly Workflow
 
 <p align="center>
-    <img src="./Images/2_outreach.png" alt="Outreach & Approvals">
+    <img src="./Images/2_outreach.png" alt="Approval queue interface with channel tabs for Instagram Email LinkedIn Google Maps and Nextdoor and pending outreach items">
 </p>
 
 Outreach across five channels — Instagram, Email, LinkedIn, Google Maps, and Nextdoor — flows into one approval queue.
@@ -108,7 +108,7 @@ The owner can approve, edit, or  it in seconds.
 ### Prospect Finder — Identifying High-Value Customers
 
 <p align="center">
-    <img src="./Images/3_prospects.png" alt="Prospect Finder">
+    <img src="./Images/3_prospects.png" alt="Prospect finder view displaying local business opportunities with relevance scores and suggested catering outreach">
 </p>
 
 The system scans nearby businesses and highlights strong catering opportunities.
@@ -126,7 +126,7 @@ Outreach can be drafted instantly and sent to the approval queue.
 ### Ad & Content Studio — Consistent, On-Brand Content
 
 <p align="center">
-    <img src="./Images/4_content_studio.png" alt="Ad & Content Studio">
+    <img src="./Images/4_content_studio.png" alt="Content studio showing weekly social post ideas captions hashtags and ad options for Meta Google and Nextdoor">
 </p>
 
 Each week, the system generates:
@@ -143,7 +143,7 @@ Everything is ready to go — pending approval.
 ### Phase 2 Roadmap — Building the Full System
 
 <p align="center">
-    <img src="./Images/5_roadmap.png" alt="Roadmap">
+    <img src="./Images/5_roadmap.png" alt="Phase two roadmap graphic with milestones for catering page conversion tracking loyalty integration and review engine">
 </p>
 
 Phase 2 begins with strengthening the digital foundation — including a dedicated catering page, conversion tracking, and a centralized way to capture customer data across channels.
