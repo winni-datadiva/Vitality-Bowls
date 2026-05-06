@@ -158,7 +158,25 @@ From there, the system expands:
 Over time, these components connect into a unified system where outreach, conversion, and retention all work together.
 
 ---
+### Additional Recommendations — Vitality Bowls Stamford Instagram
 
+<p align="center">
+  <img src="./Images/instagram_mockup.png" alt="Mockup of suggested Instagram profile changes for Vitality Bowls Stamford including updated bio, Linktree, and pinned story highlights">
+</p>
+
+Beyond the AI dashboard, we created a mockup of simple, high-impact changes to the Vitality Bowls Stamford Instagram account — drawn from examples across other franchises — that can be implemented immediately.
+
+The current [@vitalitybowlsstamford](https://www.instagram.com/vitalitybowlsstamford) profile has an empty biography. Suggested updates include:
+
+- A **Linktree** linking directly to their catering booking page and third-party delivery couriers
+- A **detailed bio** with location, hours, and a short brand description to improve discoverability
+- **Pinned story highlights** featuring franchise-specific photos and videos for a more polished profile
+
+These changes require no ongoing maintenance and directly support both catering conversions and everyday online visibility.
+
+**Estimated time to implement: ~30 minutes, one time.**
+
+---
 ## The Impact
 
 The goal is simple and practical:
