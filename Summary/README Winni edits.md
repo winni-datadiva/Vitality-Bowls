@@ -54,6 +54,25 @@ Providing the owner with a system to identify prospects, reach them consistently
 
 ---
 
+## Task Overview
+
+**Phase 1**  Weeks 1-4  
+- Update IG bio and links  
+- Get familiar with the dashboard  
+- Add brand materials to the system  
+- Review AI drafts  
+- Set initial advertising budget
+
+**Phase 2**    Months 2-6  
+- Custom URL: move to demo to custom URL  
+- Private login for the owner, managers, and relevant personnel
+- Integrate Toast POS credentials
+- Every lead, approval, & follow-up saved automatically  
+- Real-time AI drafts  
+- Works on any device  
+
+---
+
 ## The Numbers That Matter
 
 The potential impact for the owner is not just in added revenue but also giving them more time back in their schedule. The owner defined success clearly. Two to three catering orders per week. One reliable recurring office account would prove the system works. A typical catering order runs $150–400. Getting there from essentially zero is what this tool is built to do — not by adding more complexity to a busy owner's day, but by removing it.
